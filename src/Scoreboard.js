@@ -1,5 +1,6 @@
 import React from 'react';
 import './Scoreboard.css';
+import field_default from './images/field_default.png';
 
 class Scoreboard extends React.Component {
     constructor(props) {
@@ -69,33 +70,40 @@ class Scoreboard extends React.Component {
         }
     }
 
+
+
     render() {
         var arrow = 'glyphicon glyphicon-chevron-up'
         if (this.state.half === "bottom")
             arrow = 'glyphicon glyphicon-chevron-down'
         return (
-            <div>
-            <table className = "greenTable">
-            <tbody>
-                <tr>
-                    <th>{this.state.home}</th>
-                    <td>{this.state.homescore}</td>
-                    <td rowSpan = '2'><span className={arrow} aria-hidden="true" ></span>{this.state.inning}</td>
-                </tr>
-                
-                <tr>
-                    <th>{this.state.away}</th>
-                    <td>{this.state.awayscore}</td>
-                </tr>
-            </tbody>
-            </table>
-            <p>Outs: {this.state.outs}</p>
-            <br></br>
-            <button onClick={(e) => this.endhalf()} >End half inning </button>
-            <br/>
-            <button onClick={(e) => this.incrementScore()}>Add a run</button>
-            <br/>
-            <button onClick={(e) => this.addOut()}>Out!</button>
+            <div className = "row">
+            <div className = "col-md-6">
+                <table className = "greenTable">
+                    <tbody>
+                        <tr>
+                            <th>{this.state.home}</th>
+                            <td>{this.state.homescore}</td>
+                            <td rowSpan = '2'><span className={arrow} aria-hidden="true" style={{color: 'purple'}}></span>{this.state.inning}</td>
+                        </tr>
+                        
+                        <tr>
+                            <th>{this.state.away}</th>
+                            <td>{this.state.awayscore}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div className="col-md-6">
+                <img className="img-responsive fieldmap" src={field_default}></img>
+                <p>Outs: {this.state.outs}</p>
+                <br></br>
+                <button onClick={(e) => this.endhalf()} >End half inning </button>
+                <br/>
+                <button onClick={(e) => this.incrementScore()}>Add a run</button>
+                <br/>
+                <button onClick={(e) => this.addOut()}>Out!</button>
+            </div>
             </div>
         );
     }
