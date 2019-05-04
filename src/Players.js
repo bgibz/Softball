@@ -15,7 +15,6 @@ class Players extends React.Component {
           <div className="roster">
             <h4>Roster</h4>
             <ul className="theList">
-            
               {players}
             </ul>
           </div>

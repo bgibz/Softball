@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import PlayerForm from './PlayerForm';
+import Scoreboard from  './Scoreboard';
 
 class App extends React.Component {
 
@@ -10,7 +11,7 @@ class App extends React.Component {
       <div className="App-header">
         <div className="Container">
           <div class = "row">
-          <p> Test </p>
+          <Scoreboard />
           </div>
         </div>
       </div>

@@ -24,7 +24,6 @@ class PlayerForm extends React.Component{
       }
     
     handleSubmit(event) {
-    //alert('A name was submitted: ' + this.state.name +'\n'+ 'Gender: ' + this.state.gender);
     var newPlayer = {
         name: this.state.name,
         gender: this.state.gender,
