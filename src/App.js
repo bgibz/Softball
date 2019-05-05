@@ -10,9 +10,7 @@ class App extends React.Component {
       <div className="App">
       <div className="App-header">
         <div className="Container">
-          <div class = "row">
           <Scoreboard />
-          </div>
         </div>
       </div>
         <PlayerForm />
