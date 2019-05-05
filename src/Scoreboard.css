@@ -1,3 +1,7 @@
+.scoreboard {
+  display: flex;
+}
+
 table.greenTable {
   font-family: Georgia, serif;
   border: 6px solid #24943A;

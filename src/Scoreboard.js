@@ -36,12 +36,14 @@ class Scoreboard extends React.Component {
     endhalf() {
         if (this.state.half === "top") {
             this.setState((state) => {
-                return { half: "bottom"}
+                return { half: "bottom",
+            outs: 0}
             });
         } else{
             this.setState((state) => {
                 return { half: "top",
-                inning: state.inning + 1 }
+                inning: state.inning + 1,
+                outs: 0 }
             });
         }
     }
@@ -92,33 +94,37 @@ class Scoreboard extends React.Component {
         }
         
         return (
-            <div className = "row">
-            <div className = "col-md-6">
-                <table className = "greenTable">
-                    <tbody>
-                        <tr>
-                            <th>{this.state.home}</th>
-                            <td>{this.state.homescore}</td>
-                            <td rowSpan = '2'><span className={arrow} aria-hidden="true" style={{color: 'purple'}}></span>{this.state.inning}</td>
-                        </tr>
-                        
-                        <tr>
-                            <th>{this.state.away}</th>
-                            <td>{this.state.awayscore}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div className="col-md-6">
-                <img className="img-responsive fieldmap" src={field_default}></img>
-                <p>Out:  <span dangerouslySetInnerHTML={{__html: outs}}></span></p>
-                <br></br>
-                <button onClick={(e) => this.endhalf()} >End half inning </button>
-                <br/>
-                <button onClick={(e) => this.incrementScore()}>Add a run</button>
-                <br/>
-                <button onClick={(e) => this.addOut()}>Out!</button>
-            </div>
+            <div className = "scoreboard">
+                <div className = "row">
+                <div className = "col-md-6">
+                    <table className = "greenTable">
+                        <tbody>
+                            <tr>
+                                <th>{this.state.home}</th>
+                                <td>{this.state.homescore}</td>
+                                <td rowSpan = '2'><span className={arrow} aria-hidden="true" style={{color: 'purple'}}></span>{this.state.inning}</td>
+                            </tr>
+                            
+                            <tr>
+                                <th>{this.state.away}</th>
+                                <td>{this.state.awayscore}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div className="col-md-6">
+                    <img className="img-responsive fieldmap" src={field_default}></img>
+                    <p>Out:  <span dangerouslySetInnerHTML={{__html: outs}}></span></p>
+                    <br></br>
+                    <button onClick={(e) => this.endhalf()} >End half inning </button>
+                    <br/>
+                    <button onClick={(e) => this.incrementScore()}>Add a run</button>
+                    <br/>
+                    <button onClick={(e) => this.addOut()}>Out!</button>
+                </div>
+                </div>
+                <div className = "row">
+                </div>
             </div>
         );
     }
