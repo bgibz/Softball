@@ -8,7 +8,10 @@ class PlayerForm extends React.Component{
         this.state = {
             name: '',
             gender: '',
-            players: []
+            players: [],
+            lineup: [],
+            male_lineup: [],
+            female_lineup: []
             };
     
         this.handleChange = this.handleChange.bind(this);
@@ -82,7 +85,8 @@ class PlayerForm extends React.Component{
                 <div className = "col-sm-6">
                     <Players entries={this.state.players}/>
                 </div>
-                <div className = "col-sm-6"></div>
+                <div className = "col-sm-6">
+                </div>
             </div>
         </div>
         );

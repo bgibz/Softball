@@ -13,6 +13,7 @@ class App extends React.Component {
           <Scoreboard />
         </div>
       </div>
+      <div className="Container">
         <PlayerForm />
       </div> 
     )
