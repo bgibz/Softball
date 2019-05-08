@@ -1,5 +1,6 @@
 import React from 'react';
-import Players from './Players.js';
+import Players from './Players.jsx';
+import Lineup from './Lineup.jsx';
 
 
 class PlayerForm extends React.Component{
@@ -31,7 +32,8 @@ class PlayerForm extends React.Component{
     var newPlayer = {
         name: this.state.name,
         gender: this.state.gender,
-        key: Date.now()
+        key: Date.now(),
+        handleClick: this.testfunc
       };
     
       this.setState((prevState) => {
@@ -43,9 +45,13 @@ class PlayerForm extends React.Component{
     event.preventDefault();
     }
 
+    testfunc(name){
+        // TODO: click handler works through this. manipulate lineup stuff.
+        console.log(name);
+    }
+
     getLineup(event) {
-
-
+        // TODO: deal with data passed up from child
         event.preventDefault();
     }
     

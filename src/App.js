@@ -16,6 +16,7 @@ class App extends React.Component {
       <div className="Container">
         <PlayerForm />
       </div> 
+      </div>
     )
   }
 }

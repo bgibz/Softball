@@ -87,7 +87,7 @@ class Scoreboard extends React.Component {
             + " <span class = 'fa fa-circle-o' aria-hidden='true'></span>"
             + " <span class = 'fa fa-circle-o' aria-hidden='true'></span>";
         }
-        if (this.state.outs == 2) {
+        if (this.state.outs >= 2) {
             outs = "<span class = 'fa fa-circle' aria-hidden='true'></span>"
             + " <span class = 'fa fa-circle' aria-hidden='true'></span>"
             + " <span class = 'fa fa-circle-o' aria-hidden='true'></span>";
