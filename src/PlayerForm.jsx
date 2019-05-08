@@ -16,6 +16,7 @@ class PlayerForm extends React.Component{
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.getLineup = this.getLineup.bind(this);
     }
 
     handleChange(event) {
@@ -40,6 +41,12 @@ class PlayerForm extends React.Component{
       });
     
     event.preventDefault();
+    }
+
+    getLineup(event) {
+
+
+        event.preventDefault();
     }
     
     render() {
@@ -83,9 +90,10 @@ class PlayerForm extends React.Component{
             </form>
             <div className = "container-fluid">
                 <div className = "col-sm-6">
-                    <Players entries={this.state.players}/>
+                    <Players sendLineup={this.getLineup} entries={this.state.players}/>
                 </div>
                 <div className = "col-sm-6">
+                    <Lineup entries={this.state.lineup}/>
                 </div>
             </div>
         </div>
