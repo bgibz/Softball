@@ -17,7 +17,7 @@ class Players extends React.Component {
   }
 
   createPlayers(item) {
-      return <li key={item.key} className={item.gender} onClick={() => item.handleClick(item.name)}>{item.name}</li>
+      return <li key={item.key} className={item.gender} onClick={() => item.handleClick(item.name, item.gender, item.key)}>{item.name}</li>
     }
      
   render() {

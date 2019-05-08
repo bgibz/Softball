@@ -18,6 +18,7 @@ class PlayerForm extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.getLineup = this.getLineup.bind(this);
+        this.testfunc = this.testfunc.bind(this);
     }
 
     handleChange(event) {
@@ -45,9 +46,20 @@ class PlayerForm extends React.Component{
     event.preventDefault();
     }
 
-    testfunc(name){
-        // TODO: click handler works through this. manipulate lineup stuff.
-        console.log(name);
+    testfunc(name, gender, key){
+        var player = {
+            name: name,
+            gender: gender,
+            key: key
+        };
+        //newtest(player);
+        
+        this.setState((prevState) => {
+            return {
+                lineup: prevState.lineup.concat(player)
+            };
+        });
+        
     }
 
     getLineup(event) {
