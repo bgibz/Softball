@@ -18,7 +18,7 @@ class PlayerForm extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.getLineup = this.getLineup.bind(this);
-        this.testfunc = this.testfunc.bind(this);
+        this.handlePlayerClick = this.handlePlayerClick.bind(this);
     }
 
     handleChange(event) {
@@ -34,7 +34,7 @@ class PlayerForm extends React.Component{
         name: this.state.name,
         gender: this.state.gender,
         key: Date.now(),
-        handleClick: this.testfunc
+        handleClick: this.handlePlayerClick
       };
     
       this.setState((prevState) => {
@@ -46,20 +46,37 @@ class PlayerForm extends React.Component{
     event.preventDefault();
     }
 
-    testfunc(name, gender, key){
+    handlePlayerClick(name, gender, key){
         var player = {
             name: name,
             gender: gender,
             key: key
         };
-        //newtest(player);
-        
-        this.setState((prevState) => {
-            return {
-                lineup: prevState.lineup.concat(player)
-            };
-        });
-        
+        var currentLineup = this.state.lineup;
+        var inLineup = false;
+        var i = 0;
+        var remove;
+        for (let player of currentLineup) {
+            if (player.key === key) {
+                inLineup = true;
+                remove = i;
+            }
+            i++;
+        }
+        if (!inLineup){
+            this.setState((prevState) => {
+                return {
+                    lineup: prevState.lineup.concat(player)
+                }
+            });
+        } else {
+            currentLineup.splice(remove, 1);
+            this.setState((prevState) => {
+                return {
+                    lineup: currentLineup
+                }
+            });
+        }
     }
 
     getLineup(event) {
