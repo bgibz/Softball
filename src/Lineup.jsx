@@ -11,9 +11,9 @@ class Lineup extends React.Component {
         var players = todoEntries.map(this.createPlayers);
      
         return (
-          <div className="roster">
-            <h4>Roster</h4>
-            <ol className="theList">
+          <div className="lineup">
+            <h4>Lineup</h4>
+            <ol className="lineupList">
               {players}
             </ol>
           </div>

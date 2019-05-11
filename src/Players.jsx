@@ -25,8 +25,8 @@ class Players extends React.Component {
     var players = todoEntries.map(this.createPlayers);
   
     return (
-      <div className="lineup">
-        <h4>Lineup</h4>
+      <div className="roster">
+        <h4>Roster</h4>
         <ul className="theList">
           {players}
         </ul>

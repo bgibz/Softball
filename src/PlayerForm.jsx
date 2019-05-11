@@ -17,7 +17,6 @@ class PlayerForm extends React.Component{
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.getLineup = this.getLineup.bind(this);
         this.handlePlayerClick = this.handlePlayerClick.bind(this);
     }
 
@@ -77,11 +76,6 @@ class PlayerForm extends React.Component{
                 }
             });
         }
-    }
-
-    getLineup(event) {
-        // TODO: deal with data passed up from child
-        event.preventDefault();
     }
     
     render() {
