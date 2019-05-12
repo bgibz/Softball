@@ -76,6 +76,8 @@ class PlayerForm extends React.Component{
                 }
             });
         }
+        var top = currentLineup.slice(0,3);
+        this.props.getLineup(top);
     }
     
     render() {
@@ -119,10 +121,10 @@ class PlayerForm extends React.Component{
             </form>
             <div className = "container-fluid">
                 <div className = "col-sm-6">
-                    <Players sendLineup={this.getLineup} entries={this.state.players}/>
+                    <Players entries={this.state.players}/>
                 </div>
                 <div className = "col-sm-6">
-                    <Lineup entries={this.state.lineup}/>
+                    <Lineup entries={this.state.lineup} sendLineup={this.props.getLineup} />
                 </div>
             </div>
         </div>
