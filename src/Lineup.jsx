@@ -10,8 +10,8 @@ class Lineup extends React.Component {
     }
      
     render() {
-    var todoEntries = this.props.entries;
-    var players = todoEntries.map(this.createPlayers);
+    var playerEntries = this.props.entries;
+    var players = playerEntries.map(this.createPlayers);
   
     return (
       <div className="lineup">

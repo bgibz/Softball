@@ -26,9 +26,7 @@ class App extends React.Component {
     return (
       <div className="App">
       <div className="App-header">
-        <div className="Container">
-          <Scoreboard topOfOrder={this.state.topOfOrder}/>
-        </div>
+        <Scoreboard topOfOrder={this.state.topOfOrder}/>
       </div>
       <div className="Container">
         <PlayerForm getLineup={this.getLineup}/>

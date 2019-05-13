@@ -54,3 +54,8 @@
   border: dashed;
   margin: 5px 5px 5px 5px;
 }
+
+.upcoming li{
+  list-style: none;
+  display: inline;
+}

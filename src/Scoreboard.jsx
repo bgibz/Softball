@@ -1,5 +1,6 @@
 import React from 'react';
 import './Scoreboard.css';
+import UpcomingBatters from './UpcomingBatters.jsx';
 import field_default from './images/field_default.png';
 
 class Scoreboard extends React.Component {
@@ -95,6 +96,7 @@ class Scoreboard extends React.Component {
         
         return (
             <div className = "scoreboard">
+            <div className = "container">
                 <div className = "row">
                 <div className = "col-md-6">
                     <table className = "greenTable">
@@ -124,6 +126,10 @@ class Scoreboard extends React.Component {
                 </div>
                 </div>
                 <div className = "row">
+                    <div className = "col-md-12">
+                        < UpcomingBatters entries={this.props.topOfOrder} />
+                    </div>
+                </div>
                 </div>
             </div>
         );
