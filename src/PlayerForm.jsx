@@ -11,8 +11,6 @@ class PlayerForm extends React.Component{
             gender: '',
             players: [],
             lineup: [],
-            male_lineup: [],
-            female_lineup: []
             };
     
         this.handleChange = this.handleChange.bind(this);
@@ -76,8 +74,7 @@ class PlayerForm extends React.Component{
                 }
             });
         }
-        var top = currentLineup.slice(0,3);
-        this.props.getLineup(top);
+        this.props.getLineup(currentLineup);
     }
     
     render() {

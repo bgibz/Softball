@@ -74,6 +74,9 @@ class Scoreboard extends React.Component {
         }
     }
 
+    nextBatter() {
+        this.props.nextBatter();
+    }
 
 
     render() {
@@ -123,6 +126,8 @@ class Scoreboard extends React.Component {
                     <button onClick={(e) => this.incrementScore()}>Add a run</button>
                     <br/>
                     <button onClick={(e) => this.addOut()}>Out!</button>
+                    <br/>
+                    <button onClick={(e) => this.props.nextBatter()}>Next Batter</button>
                 </div>
                 </div>
                 <div className = "row">
