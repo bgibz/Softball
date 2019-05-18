@@ -20,8 +20,8 @@ class App extends React.Component {
 
   getLineup(data) {
     // TODO: split into male and female order
-    var men = this.state.maleOrder;
-    var women = this.state.femaleOrder
+    var men = [];
+    var women = [];
     for (let player of data){
       if (player.gender === "male")
         men.push(player);
