@@ -61,7 +61,7 @@ class PlayerForm extends React.Component{
             i++;
         }
         if (!inLineup){
-            currentLineup.concat(player);
+            currentLineup.push(player);
             this.setState((prevState) => {
                 return {
                     lineup: currentLineup
