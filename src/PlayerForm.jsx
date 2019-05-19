@@ -31,6 +31,7 @@ class PlayerForm extends React.Component{
         name: this.state.name,
         gender: this.state.gender,
         key: Date.now(),
+        selected: false,
         handleClick: this.handlePlayerClick
       };
     
@@ -43,39 +44,54 @@ class PlayerForm extends React.Component{
     event.preventDefault();
     }
 
-    handlePlayerClick(name, gender, key){
+    handlePlayerClick(name, gender, key, selected){
         var player = {
             name: name,
             gender: gender,
             key: key
         };
         var currentLineup = this.state.lineup;
-        var inLineup = false;
+        var currentPlayers = this.state.players;
+        var inLineup = selected;
         var i = 0;
         var remove;
-        for (let player of currentLineup) {
-            if (player.key === key) {
-                inLineup = true;
-                remove = i;
-            }
-            i++;
-        }
-        if (!inLineup){
-            currentLineup.push(player);
-            this.setState((prevState) => {
-                return {
-                    lineup: currentLineup
+        if (!inLineup) {
+            // find player in player list and make them selected
+            for (let person of currentPlayers){
+                if (person.key === key) {
+                    person.selected = true;
                 }
+            }
+            // add player to lineup
+            currentLineup.push(player);
+            this.setState({
+                lineup: currentLineup,
+                players: currentPlayers
             });
         } else {
+            // find player in player list and mark them unselected
+            for (let person of currentPlayers){
+                if (person.key === key) {
+                    person.selected = false;
+                }
+            }
+            // remove player from lineup
+            for (let person of currentLineup) {
+                if (person.key === key) {
+                    inLineup = true;
+                    remove = i;
+                }
+                i++;
+            }
             currentLineup.splice(remove, 1);
             this.setState((prevState) => {
                 return {
-                    lineup: currentLineup
+                    lineup: currentLineup,
+                    players: currentPlayers
                 }
             });
+            this.props.getLineup(currentLineup);
         }
-        this.props.getLineup(currentLineup);
     }
     
     render() {

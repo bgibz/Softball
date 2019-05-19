@@ -5,19 +5,17 @@ class Players extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    //this.handleClick = this.handleClick.bind(this);
     this.state = {
       lineup: []
     };
   }
 
-  handleClick(name, gender, key) {
-    //const name = event.target.name;
-    console.log(name)
-  }
-
   createPlayers(item) {
-      return <li key={item.key} className={item.gender} onClick={() => item.handleClick(item.name, item.gender, item.key)}>{item.name}</li>
+    if (item.selected === true)
+      return <li key={item.key} className={item.gender} selected={item.selected} onClick={() => item.handleClick(item.name, item.gender, item.key, item.selected)}>{item.name}<span className = 'fa fa-check' aria-hidden='true'></span></li>
+    else
+      return <li key={item.key} className={item.gender} selected={item.selected} onClick={() => item.handleClick(item.name, item.gender, item.key, item.selected)}>{item.name}</li>
     }
      
   render() {
