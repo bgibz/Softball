@@ -13,7 +13,9 @@ class App extends React.Component {
       femaleOrder: [],
       maleNext: 0,
       femaleNext: 0,
-      flag: true
+      flag: true,
+      doubleGender: "female",
+      genderAtBat: "male"
     };
     this.getLineup = this.getLineup.bind(this);
     this.triggerNext = this.triggerNext.bind(this);
@@ -51,10 +53,7 @@ class App extends React.Component {
     let total = numMen + numWomen;
     let mNext = this.state.maleNext;
     let fNext = this.state.femaleNext;
-    let currGen = 'female';
-    if (!(this.state.topOfOrder[0] === undefined)){
-      currGen = this.state.topOfOrder[0].gender;
-    }
+    let currGen = this.state.genderAtBat;
     let order = [];
     if (this.state.flag) {
     this.setState(() => {
@@ -62,34 +61,45 @@ class App extends React.Component {
         flag: false
       }
     });
-    } else {
-      if (currGen === "male") {
-        mNext = (mNext + 1) % numMen;
-      } else if (currGen ==='female') {
-        fNext = (fNext + 1) % numWomen;
-      }
     }
     let m = mNext; // male array counter
     let f = fNext; // female array counter
     let g = currGen; // flag for last gender
     for (let i = 0; i < total; i++){
-      if (g === "male") {
+      if (g === "female") {
         order.push(women[f]);
         f = (f+1) % numWomen;
-        g = "female";
+        if ((f === 0) && (!this.state.flag) && (this.state.doubleGender === "female"))
+        {
+          g = "female";
+        } else {
+          g = "male";
+        }
       } else {
         order.push(men[m]);
         m = (m+1) % numMen;
-        g = "male";
+        if ((m === 0) && (!this.state.flag) && (this.state.doubleGender === "male"))
+        {
+          g = "male";
+        } else {
+          g = "female";
+        }
       }
     }
     let orderCopy = order;
+    let nextAtBat = orderCopy[1].gender;
+    if (currGen === "male") {
+      mNext = (mNext + 1) % numMen;
+    } else if (currGen ==='female') {
+      fNext = (fNext + 1) % numWomen;
+    }
     this.setState((prevState) => {
       return {
       currentOrder: order,
       maleNext: mNext,
       femaleNext: fNext,
-      topOfOrder: orderCopy.splice(0,3)
+      topOfOrder: orderCopy.splice(0,3),
+      genderAtBat: nextAtBat
       }
     });
   }
