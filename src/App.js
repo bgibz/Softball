@@ -12,14 +12,14 @@ class App extends React.Component {
       maleOrder: [],
       femaleOrder: [],
       maleNext: 0,
-      femaleNext: 0
+      femaleNext: 0,
+      flag: true
     };
     this.getLineup = this.getLineup.bind(this);
     this.triggerNext = this.triggerNext.bind(this);
   }
 
   getLineup(data) {
-    // TODO: split into male and female order
     var men = [];
     var women = [];
     for (let player of data){
@@ -44,7 +44,6 @@ class App extends React.Component {
 
   triggerNext() {
     // determine if most recent batter was male or female and increment the needed counter
-    console.log("TRIGGER");
     let men = this.state.maleOrder;
     let women = this.state.femaleOrder;
     let numMen = men.length;
@@ -56,12 +55,19 @@ class App extends React.Component {
     if (!(this.state.topOfOrder[0] === undefined)){
       currGen = this.state.topOfOrder[0].gender;
     }
-    
     let order = [];
-    if (currGen === "male") {
-      mNext = (mNext + 1) % numMen;
-    } else if (currGen ==='female') {
-      fNext = (fNext + 1) % numWomen;
+    if (this.state.flag) {
+    this.setState(() => {
+      return {
+        flag: false
+      }
+    });
+    } else {
+      if (currGen === "male") {
+        mNext = (mNext + 1) % numMen;
+      } else if (currGen ==='female') {
+        fNext = (fNext + 1) % numWomen;
+      }
     }
     let m = mNext; // male array counter
     let f = fNext; // female array counter
