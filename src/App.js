@@ -1,4 +1,5 @@
 import React from 'react';
+import {Howl, Howler} from 'howler';
 import './App.css';
 import PlayerForm from './PlayerForm';
 import Scoreboard from  './Scoreboard';
@@ -102,6 +103,12 @@ class App extends React.Component {
       genderAtBat: nextAtBat
       }
     });
+
+    var tstSound = new Howl({
+      src: ['./media/sound.mp3']
+    });
+
+    tstSound.play();
   }
 
   render() {
