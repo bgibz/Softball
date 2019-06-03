@@ -32,7 +32,7 @@ class App extends React.Component {
       else
         women.push(player);
     }
-    this.setState((prevState) => {
+    this.setState(() => {
       return{
         maleOrder: men,
         femaleOrder: women
@@ -42,7 +42,13 @@ class App extends React.Component {
 
   initializeOrder(gender) {
     if (gender === 'male'){
-
+      this.setState(() => {
+        genderAtBat: 'male'
+      });
+    } else {
+      this.setState(() => {
+        genderAtBat: 'female'
+      });
     }
   }
 
