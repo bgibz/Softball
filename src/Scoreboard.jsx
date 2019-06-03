@@ -1,7 +1,6 @@
 import React from 'react';
 import './Scoreboard.css';
 import UpcomingBatters from './UpcomingBatters.jsx';
-import field_default from './images/field_default.png';
 
 class Scoreboard extends React.Component {
 
@@ -118,7 +117,6 @@ class Scoreboard extends React.Component {
                     </table>
                 </div>
                 <div className="col-md-6">
-                    <img className="img-responsive fieldmap" src={field_default}></img>
                     <p>Out:  <span dangerouslySetInnerHTML={{__html: outs}}></span></p>
                     <br></br>
                     <button onClick={(e) => this.endhalf()} >End half inning </button>
