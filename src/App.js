@@ -1,8 +1,8 @@
 import React from 'react';
-import {Howl, Howler} from 'howler';
 import './App.css';
 import PlayerForm from './PlayerForm';
 import Scoreboard from  './Scoreboard';
+import walkupService from './walkupService';
 
 class App extends React.Component {
   constructor(props){
@@ -20,6 +20,7 @@ class App extends React.Component {
     };
     this.getLineup = this.getLineup.bind(this);
     this.triggerNext = this.triggerNext.bind(this);
+    this.walkupService = new walkupService();
   }
 
   getLineup(data) {
@@ -104,11 +105,7 @@ class App extends React.Component {
       }
     });
 
-    var tstSound = new Howl({
-      src: ['./media/sound.mp3']
-    });
-
-    tstSound.play();
+    this.walkupService.playWalkup(order[0].name)
   }
 
   render() {
