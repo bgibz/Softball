@@ -11,7 +11,7 @@ class Scoreboard extends React.Component {
             half: 'top',
             homescore: 0,
             awayscore: 0,
-            home: 'DMAG',
+            home: 'Home',
             away: 'Away',
             outs: 0
         };
@@ -48,14 +48,26 @@ class Scoreboard extends React.Component {
         }
     }
 
-    incrementScore() {
-        if (this.state.half === "top") {
+    incrementScore(team) {
+        if (team === "home") {
             this.setState((state) => {
                 return { homescore: state.homescore + 1 }
             });
         } else{
             this.setState((state) => {
                 return { awayscore: state.awayscore + 1 }
+            });
+        }
+    }
+
+    decrementScore(team) {
+        if (team === "home") {
+            this.setState((state) => {
+                return { homescore: state.homescore - 1 }
+            });
+        } else{
+            this.setState((state) => {
+                return { awayscore: state.awayscore - 1 }
             });
         }
     }
@@ -100,28 +112,49 @@ class Scoreboard extends React.Component {
             <div className = "scoreboard">
             <div className = "container">
                 <div className = "row">
-                <div className = "col-md-6">
+                <div className = "col-md-12">
                     <table className = "greenTable">
                         <tbody>
                             <tr>
                                 <th>{this.state.home}</th>
-                                <td>{this.state.homescore}</td>
-                                <td rowSpan = '2'><span className={arrow} aria-hidden="true" style={{color: 'purple'}}></span>{this.state.inning}</td>
+                                <td>
+                                    <table className = "innerTable">                                
+                                        <tbody>
+                                            <tr>
+                                            <td rowSpan = '2'>{this.state.homescore}</td>
+                                            <td><button className='btn btn-secondary' onClick = {(e) => this.incrementScore("home")}><span className = 'fa fa-caret-up'></span></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button className = 'btn btn-secondary' onClick = {(e) => this.decrementScore("home")}><span className = 'fa fa-caret-down'></span></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <th rowSpan = '2'><span className={arrow} aria-hidden="true" style={{color: 'purple'}}></span>{this.state.inning}</th>
                             </tr>
-                            
                             <tr>
                                 <th>{this.state.away}</th>
-                                <td>{this.state.awayscore}</td>
+                                <td>
+                                    <table className = "innerTable">                                
+                                        <tbody>
+                                            <tr>
+                                            <td rowSpan = '2'>{this.state.awayscore}</td>
+                                            <td><button className='btn btn-secondary' onClick = {(e) => this.incrementScore("away")}><span className = 'fa fa-caret-up'></span></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button className = 'btn btn-secondary' onClick = {(e) => this.decrementScore("away")}><span className = 'fa fa-caret-down'></span></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-12">
                     <p>Out:  <span dangerouslySetInnerHTML={{__html: outs}}></span></p>
                     <br></br>
                     <button onClick={(e) => this.endhalf()} >End half inning </button>
-                    <br/>
-                    <button onClick={(e) => this.incrementScore()}>Add a run</button>
                     <br/>
                     <button onClick={(e) => this.addOut()}>Out!</button>
                     <br/>

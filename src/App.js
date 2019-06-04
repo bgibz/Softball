@@ -43,11 +43,15 @@ class App extends React.Component {
   initializeOrder(gender) {
     if (gender === 'male'){
       this.setState(() => {
+        return {
         genderAtBat: 'male'
+        }
       });
     } else {
       this.setState(() => {
+        return {
         genderAtBat: 'female'
+        }
       });
     }
   }

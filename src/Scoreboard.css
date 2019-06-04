@@ -14,6 +14,7 @@ table.greenTable th {
   padding: 3px 2px;
   width: 200px;
   text-align: center;
+  font-size: 3em
 }
 
 table.greenTable td {
@@ -22,7 +23,7 @@ table.greenTable td {
     width: 100px;
 }
 table.greenTable tbody td {
-  font-size: 13px;
+  font-size: 1.3em;
 }
 table.greenTable thead {
   background: #24943A;
@@ -32,7 +33,7 @@ table.greenTable thead {
   border-bottom: 0px solid #444444;
 }
 table.greenTable thead th {
-  font-size: 19px;
+  font-size: 30px;
   font-weight: bold;
   color: #F0F0F0;
   text-align: center;
@@ -66,6 +67,7 @@ table.greenTable tfoot .links a{
   border-radius: 5px;
 }
 
-img.img-responsive.fieldmap {
-  margin: 5px 0px 0px 5px;
+table.innerTable td {
+  border-collapse: collapse;
+  border: none;
 }

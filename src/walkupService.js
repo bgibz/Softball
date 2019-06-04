@@ -2,6 +2,9 @@ import {Howl, Howler} from 'howler';
 import alyssaSound from './media/Alyssa.mp3';
 import danicaSound from './media/Danica.mp3';
 import tonySound from './media/Tony.mp3';
+import iainSound from './media/Iain.mp3';
+import kellySound from './media/Kelly.mp3';
+import seanSound from './media/Sean.mp3';
 
 class walkupService {
     constructor() {
@@ -17,13 +20,27 @@ class walkupService {
             src: [tonySound],
             html5: true
         });
-
+        var iain = new Howl({
+            src: [iainSound],
+            html5: true
+        });
+        var kelly = new Howl({
+            src: [kellySound],
+            html5: true
+        });
+        var sean = new Howl({
+            src: [seanSound],
+            html5: true
+        });
         this.sounds = new Map();
         this.sounds.set('Alyssa', alyssa);
         this.sounds.set('Danica', danica);
         this.sounds.set('Tony', tony);
+        this.sounds.set('Iain', iain);
+        this.sounds.set('Kelly', kelly);
+        this.sounds.set('Sean', sean);
 
-        this.playWalkup = this.playWalkup.bind(this);
+        //this.playWalkup = this.playWalkup.bind(this);
     }
 
     playWalkup(playerName){
@@ -35,7 +52,7 @@ class walkupService {
                 myHowl = value;
             }
         }
-        if (myHowl !== null){
+        if (myHowl !== undefined){
             setTimeout(function() { 
                 myHowl.play();
                 myHowl.fade(1, 0, 30000);
