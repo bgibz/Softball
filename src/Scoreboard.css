@@ -67,7 +67,11 @@ table.greenTable tfoot .links a{
   border-radius: 5px;
 }
 
-table.innerTable td {
+table.hiddenTable td {
   border-collapse: collapse;
   border: none;
+}
+
+button.tableButton {
+  margin: 5px;
 }
