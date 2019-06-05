@@ -149,18 +149,18 @@ class Scoreboard extends React.Component {
                                         <tbody>
                                             <tr>
                                             <td rowSpan = '2'>{this.state.homescore}</td>
-                                            <td><button className='btn btn-secondary' onClick = {(e) => this.incrementScore("home")}><span className = 'fa fa-caret-up'></span></button></td>
+                                            <td><button className='btn btn-secondary btn-sm' onClick = {(e) => this.incrementScore("home")}><span className = 'fa fa-caret-up'></span></button></td>
                                             </tr>
                                             <tr>
-                                                <td><button className = 'btn btn-secondary' onClick = {(e) => this.decrementScore("home")}><span className = 'fa fa-caret-down'></span></button></td>
+                                                <td><button className = 'btn btn-secondary btn-sm' onClick = {(e) => this.decrementScore("home")}><span className = 'fa fa-caret-down'></span></button></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </td>
                                 <th rowSpan = '2'>
                                     <span className={arrow} aria-hidden="true" style={{color: 'black'}}></span>{this.state.inning}
-                                    <button className='btn btn-secondary tableButton' onClick = {(e) => this.endhalf("last")}><span className = 'fa fa-caret-left'></span></button> 
-                                    <button className='btn btn-secondary tableButton' onClick = {(e) => this.endhalf("next")}><span className = 'fa fa-caret-right'></span></button>
+                                    <button className='btn btn-secondary btn-sm' style={{margin: '5px'}} onClick = {(e) => this.endhalf("last")}><span className = 'fa fa-caret-left'></span></button> 
+                                    <button className='btn btn-secondary btn-sm' style={{margin: '5px'}} onClick = {(e) => this.endhalf("next")}><span className = 'fa fa-caret-right'></span></button>
                                 </th>
                             </tr>
                             <tr>
@@ -170,10 +170,10 @@ class Scoreboard extends React.Component {
                                         <tbody>
                                             <tr>
                                             <td rowSpan = '2'>{this.state.awayscore}</td>
-                                            <td><button className='btn btn-secondary' onClick = {(e) => this.incrementScore("away")}><span className = 'fa fa-caret-up'></span></button></td>
+                                            <td><button className='btn btn-secondary btn-sm' onClick = {(e) => this.incrementScore("away")}><span className = 'fa fa-caret-up'></span></button></td>
                                             </tr>
                                             <tr>
-                                                <td><button className = 'btn btn-secondary' onClick = {(e) => this.decrementScore("away")}><span className = 'fa fa-caret-down'></span></button></td>
+                                                <td><button className = 'btn btn-secondary btn-sm' onClick = {(e) => this.decrementScore("away")}><span className = 'fa fa-caret-down'></span></button></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -192,14 +192,14 @@ class Scoreboard extends React.Component {
                 </div>
                 </div>
                 <div className = "row">
+                    <div className = "col-sm-12">
+                        < UpcomingBatters entries={this.props.topOfOrder} />
+                    </div>
+                </div>
+                <div className = "row">
                 <div className = "col-sm-12">
                     <button className='btn btn-primary' onClick={(e) => this.props.nextBatter()}>Next Batter</button>
                 </div>
-                </div>
-                <div className = "row">
-                    <div className = "col-md-12">
-                        < UpcomingBatters entries={this.props.topOfOrder} />
-                    </div>
                 </div>
                 </div>
             </div>

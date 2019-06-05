@@ -73,6 +73,8 @@ table.hiddenTable td {
   border: none;
 }
 
-button.tableButton {
-  margin-left: 5px;
+button.tableButton .btn .btn-secondary {
+  margin-left: 5px solid;
+  text-align: center;
+
 }
