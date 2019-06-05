@@ -101,7 +101,7 @@ class Scoreboard extends React.Component {
 
     addOut() {
         if (this.state.outs >= 2){
-            this.endhalf();
+            this.endhalf("next");
             this.setState((state) => {
                 return { outs: 0}
             });
