@@ -137,7 +137,7 @@ class Scoreboard extends React.Component {
         
         return (
             <div className = "scoreboard">
-            <div className = "container">
+            <div className = "container-fluid">
                 <div className = "row">
                 <div className = "col-md-12">
                     <table className = "greenTable">
@@ -182,17 +182,18 @@ class Scoreboard extends React.Component {
                         </tbody>
                     </table>
                 </div>
-                <div className="col-md-12">
+                </div>
+                <div className = "row">
+                <div className = "col-sm-4 offset-sm-2">
                     <p>Out:  <span dangerouslySetInnerHTML={{__html: outs}}></span></p>
-                    <br></br>
-                    <table className = "hiddenTable">
-                        <tbody>
-                            <tr>
-                                <td><buttton className='btn btn-danger' onClick={(e) => this.addOut()}>Out!</buttton></td> 
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button onClick={(e) => this.props.nextBatter()}>Next Batter</button>
+                </div>
+                <div className = "col-sm-3">
+                    <button className='btn btn-danger' onClick={(e) => this.addOut()}>Out!</button>
+                </div>
+                </div>
+                <div className = "row">
+                <div className = "col-sm-12">
+                    <button className='btn btn-primary' onClick={(e) => this.props.nextBatter()}>Next Batter</button>
                 </div>
                 </div>
                 <div className = "row">
