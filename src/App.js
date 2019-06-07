@@ -20,6 +20,8 @@ class App extends React.Component {
     };
     this.getLineup = this.getLineup.bind(this);
     this.triggerNext = this.triggerNext.bind(this);
+    this.initializeOrder = this.initializeOrder.bind(this);
+    this.setSiamese = this.setSiamese.bind(this);
     this.walkupService = new walkupService();
   }
 
@@ -54,6 +56,14 @@ class App extends React.Component {
         }
       });
     }
+  }
+
+  setSiamese(choice) {
+    this.setState(() => {
+      return {
+        doubleGender: choice
+      }
+    });
   }
 
   triggerNext() {
