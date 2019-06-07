@@ -6,6 +6,7 @@ import iainSound from './media/Iain.mp3';
 import kellySound from './media/Kelly.mp3';
 import seanSound from './media/Sean.mp3';
 
+
 class walkupService {
     constructor() {
         var alyssa = new Howl({
@@ -54,6 +55,11 @@ class walkupService {
         }
         if (myHowl !== undefined){
             setTimeout(function() { 
+                for (var [key, value] of this.sounds) {
+                    if (key !== playerName){
+                        value.stop();
+                    }
+                }
                 myHowl.play();
                 myHowl.fade(1, 0, 30000);
             }, 3000);

@@ -9,6 +9,7 @@ table.greenTable {
   background-color: #D4EED1;
   width: 100%;
   text-align: center;
+  color: black;
 }
 table.greenTable th {
   border: 1px solid #24943A;

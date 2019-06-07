@@ -193,13 +193,8 @@ class Scoreboard extends React.Component {
                 </div>
                 <div className = "row">
                     <div className = "col-sm-12">
-                        < UpcomingBatters entries={this.props.topOfOrder} />
+                        < UpcomingBatters entries={this.props.topOfOrder} nextBatter = {this.props.nextBatter} />
                     </div>
-                </div>
-                <div className = "row">
-                <div className = "col-sm-12">
-                    <button className='btn btn-primary' onClick={(e) => this.props.nextBatter()}>Next Batter</button>
-                </div>
                 </div>
                 </div>
             </div>

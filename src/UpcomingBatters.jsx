@@ -27,7 +27,7 @@ class UpcomingBatters extends React.Component {
             <table className = "table table-dark">
                 <tbody>
                     <tr>
-                        <td>At Bat</td>
+                        <td>At Bat <span><button className='btn btn-primary btn-sm' onClick={(e) => this.props.nextBatter()}>Next Batter</button></span></td>
                         <td>On Deck</td>
                         <td>In The Hole</td>
                     </tr>

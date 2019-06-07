@@ -67,6 +67,7 @@ class App extends React.Component {
     let fNext = this.state.femaleNext;
     let currGen = this.state.genderAtBat;
     let order = [];
+    let nextAtBat = "male";
     if (this.state.flag) {
     this.setState(() => {
       return {
@@ -99,7 +100,8 @@ class App extends React.Component {
       }
     }
     let orderCopy = order;
-    let nextAtBat = orderCopy[1].gender;
+    if (orderCopy.length > 3)
+      nextAtBat = orderCopy[1].gender;
     if (currGen === "male") {
       mNext = (mNext + 1) % numMen;
     } else if (currGen ==='female') {
@@ -114,8 +116,8 @@ class App extends React.Component {
       genderAtBat: nextAtBat
       }
     });
-
-    this.walkupService.playWalkup(order[0].name)
+    if (order.length > 0)
+      this.walkupService.playWalkup(order[0].name)
   }
 
   render() {
