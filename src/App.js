@@ -133,9 +133,42 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <div className="App-header">
-        <Scoreboard topOfOrder={this.state.topOfOrder} nextBatter={this.triggerNext}/>
+      <div className="App-header jumbotron">
+          <Scoreboard topOfOrder={this.state.topOfOrder} nextBatter={this.triggerNext}/>
       </div>
+      <hr></hr>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12">
+            <h2>Settings</h2>  
+          </div>
+          <div className="row">
+          <table className="table table-borderless">
+            <thead>
+              <tr>
+                <th colSpan="3">Siamese Batters</th>
+                <th colSpan = "2">Starting Gender</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <button className = "btn btn-secondary" onClick = {(e) => this.setSiamese("none")}>None</button>
+                </td>
+                <td>
+                <button className = "btn btn-success" onClick = {(e) => this.setSiamese("male")}>Male</button>
+                </td>
+                <td>
+                <button className = "btn btn-success" onClick = {(e) => this.setSiamese("female")}>Female</button>
+                </td>
+                <td colSpan="2">Male</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+      <hr></hr>
       <div className="Container">
         <PlayerForm getLineup={this.getLineup}/>
       </div> 

@@ -9,6 +9,8 @@ class PlayerForm extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlePlayerClick = this.handlePlayerClick.bind(this);
+        this.handleShowModal = this.handleShowModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
         var DMAG = [
             {
             name: "Brendan",
@@ -122,7 +124,8 @@ class PlayerForm extends React.Component{
             gender: '',
             players: DMAG,
             lineup: [],
-            };
+            showNewPlayerModal: false
+        };
     }
 
     handleChange(event) {
@@ -149,6 +152,22 @@ class PlayerForm extends React.Component{
       });
     
     event.preventDefault();
+    }
+
+    handleShowModal() {
+        this.setState(() => {
+            return {
+                showNewPlayerModal: true 
+            };
+        });
+    }
+
+    handleCloseModal() { 
+        this.setState(() => {
+            return { 
+                showNewPlayerModal: false 
+            };
+        });
     }
 
     handlePlayerClick(name, gender, key, selected){
@@ -204,30 +223,45 @@ class PlayerForm extends React.Component{
     render() {
         return (
         <div className="RosterMain">
-            <form onSubmit={this.handleSubmit}>
-            <div className="row">
+            <div className = "container-fluid">
                 <div className = "col-sm-6">
-                    <h4> Add a Player </h4>
+                    <Players entries={this.state.players}/>
+                </div>
+                <div className = "col-sm-6">
+                    <Lineup entries={this.state.lineup} sendLineup={this.props.getLineup} />
                 </div>
             </div>
-                <div className="row">
-                    <div className = "col-sm-6">
+            <div className = "container">
+            <div className="row">
+                <div className="col-sm-6">
+                    <h3>Add New Player to Roster</h3>
+                </div>
+            </div>
+            <form onSubmit={this.handleSubmit}>
+            <div className = "container">
+            <div className = "form-group row">
+                    <div className = "col-sm-2">
                         <label>
                         Name:
-                        <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
                         </label>
                     </div>
-                </div>
-                <div className = "row">
-                    <div className = "col-sm-6">
-                    <label>
-                        Gender: 
-                    </label>
+                        <div className = "col-sm-4">
+                        <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
+                    </div>
+            </div>
+                <div className = "form-group row">
+                    <div className = "col-sm-2">
+                        <label>
+                            Gender: 
+                        </label>
+                    </div>
+                    <div className = "col-sm-2">
                         <label> 
                             <input name="gender" type="radio" value="male" onChange={this.handleChange} />
                             Male
                         </label>
-                        
+                    </div>
+                    <div className = "col-sm-2"> 
                         <label>
                             <input name="gender" type="radio" value="female" onChange={this.handleChange} />
                             Female
@@ -239,14 +273,8 @@ class PlayerForm extends React.Component{
                         <input className="btn btn-primary" type="submit" value="Submit" />
                     </div>
                 </div>
+                </div>
             </form>
-            <div className = "container-fluid">
-                <div className = "col-sm-6">
-                    <Players entries={this.state.players}/>
-                </div>
-                <div className = "col-sm-6">
-                    <Lineup entries={this.state.lineup} sendLineup={this.props.getLineup} />
-                </div>
             </div>
         </div>
         );
