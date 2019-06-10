@@ -2,9 +2,6 @@ import React from 'react';
 import './Scoreboard.css';
 
 class UpcomingBatters extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     createPlayers(item) {
         return <li key={item.key} className={item.gender}>{item.name}</li>

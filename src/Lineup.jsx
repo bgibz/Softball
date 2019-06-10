@@ -1,10 +1,6 @@
 import React from 'react';
 
 class Lineup extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   createPlayers(item) {
       return <li key={item.key} className={item.gender}>{item.name}</li>
     }

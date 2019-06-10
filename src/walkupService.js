@@ -1,4 +1,4 @@
-import {Howl, Howler} from 'howler';
+import {Howl} from 'howler';
 import alyssaSound from './media/Alyssa.mp3';
 import danicaSound from './media/Danica.mp3';
 import tonySound from './media/Tony.mp3';
@@ -60,7 +60,7 @@ class walkupService {
             setTimeout(function() { 
                 myHowl.play();
                 myHowl.fade(1, 0, 30000);
-            }, 3000);
+            }, 2000);
         }
         
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './toggle.css';
 import PlayerForm from './PlayerForm';
 import Scoreboard from  './Scoreboard';
 import walkupService from './walkupService';
@@ -15,12 +16,12 @@ class App extends React.Component {
       maleNext: 0,
       femaleNext: 0,
       flag: true,
-      doubleGender: "female",
+      doubleGender: "none",
       genderAtBat: "male"
     };
     this.getLineup = this.getLineup.bind(this);
     this.triggerNext = this.triggerNext.bind(this);
-    this.initializeOrder = this.initializeOrder.bind(this);
+    this.setInitialGender = this.setInitialGender.bind(this);
     this.setSiamese = this.setSiamese.bind(this);
     this.walkupService = new walkupService();
   }
@@ -42,19 +43,22 @@ class App extends React.Component {
     });
   }
 
-  initializeOrder(gender) {
-    if (gender === 'male'){
-      this.setState(() => {
-        return {
-        genderAtBat: 'male'
-        }
-      });
-    } else {
-      this.setState(() => {
-        return {
-        genderAtBat: 'female'
-        }
-      });
+  setInitialGender(event) {
+    // Only do something before the game has started
+    if (this.state.maleNext === 0 && this.state.femaleNext === 0) {
+      if (event.target.checked) {
+        this.setState(() => {
+          return {
+            genderAtBat: "female"
+          }
+        });
+      } else {
+        this.setState (() => {
+          return {
+            genderAtBat: "male"
+          }
+        });
+      }
     }
   }
 
@@ -130,7 +134,18 @@ class App extends React.Component {
       this.walkupService.playWalkup(order[0].name)
   }
 
+
   render() {
+    var noneButton = "btn btn-secondary"
+    if (this.state.doubleGender === "none")
+      noneButton = "btn btn-success"
+    var maleButton = "btn btn-secondary"
+    if (this.state.doubleGender === 'male')
+      maleButton = "btn btn-success"
+    var femaleButton = "btn btn-secondary"
+    if (this.state.doubleGender === 'female')
+      femaleButton = "btn btn-success"
+
     return (
       <div className="App">
       <div className="App-header jumbotron">
@@ -142,26 +157,36 @@ class App extends React.Component {
           <div className="col-sm-12">
             <h2>Settings</h2>  
           </div>
+        </div>
           <div className="row">
+          <div className = "col-sm-12">
           <table className="table table-borderless">
             <thead>
               <tr>
                 <th colSpan="3">Siamese Batters</th>
-                <th colSpan = "2">Starting Gender</th>
+                <th colSpan = "4">Starting Gender</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>
-                  <button className = "btn btn-secondary" onClick = {(e) => this.setSiamese("none")}>None</button>
+                <button className = {noneButton} onClick = {(e) => this.setSiamese("none")}>None</button>
                 </td>
                 <td>
-                <button className = "btn btn-success" onClick = {(e) => this.setSiamese("male")}>Male</button>
+                <button className = {maleButton} onClick = {(e) => this.setSiamese("male")}>Male</button>
                 </td>
                 <td>
-                <button className = "btn btn-success" onClick = {(e) => this.setSiamese("female")}>Female</button>
+                <button className = {femaleButton} onClick = {(e) => this.setSiamese("female")}>Female</button>
                 </td>
-                <td colSpan="2">Male</td>
+                <td><span className="toggleLabelLeft"><strong> M </strong></span></td>
+                <td colSpan='2'>
+                <div className="toggle">
+                  <input type="checkbox" className="check" id="genderToggle" onChange= {this.setInitialGender}></input>
+                  <b className="b switch"></b>
+                  <b className="b track"></b>
+                </div>
+                </td>
+                <td><span className="toggleLabelRight"><strong> F </strong></span></td>
               </tr>
             </tbody>
           </table>
