@@ -9,8 +9,6 @@ class PlayerForm extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlePlayerClick = this.handlePlayerClick.bind(this);
-        this.handleShowModal = this.handleShowModal.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
         var DMAG = [
             {
             name: "Brendan",
@@ -154,22 +152,6 @@ class PlayerForm extends React.Component{
     event.preventDefault();
     }
 
-    handleShowModal() {
-        this.setState(() => {
-            return {
-                showNewPlayerModal: true 
-            };
-        });
-    }
-
-    handleCloseModal() { 
-        this.setState(() => {
-            return { 
-                showNewPlayerModal: false 
-            };
-        });
-    }
-
     handlePlayerClick(name, gender, key, selected){
         var player = {
             name: name,
@@ -218,6 +200,12 @@ class PlayerForm extends React.Component{
             });
         }
         this.props.getLineup(currentLineup);
+    }
+
+    arraymove(arr, fromIndex, toIndex) {
+        var element = arr[fromIndex];
+        arr.splice(fromIndex, 1);
+        arr.splice(toIndex, 0, element);
     }
     
     render() {
