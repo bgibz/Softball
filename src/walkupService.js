@@ -6,37 +6,45 @@ import iainSound from './media/Iain.mp3';
 import kellySound from './media/Kelly.mp3';
 import seanSound from './media/Sean.mp3';
 import mattSound from './media/Matt.mp3';
+import juliaSound from './media/Julia.mp3';
+import mikeSound from './media/Mike.mp3';
 
 
 class walkupService {
     constructor() {
-        var alyssa = new Howl({
+        const alyssa = new Howl({
             src: [alyssaSound],
             html5: true
           });
-        var danica = new Howl({
+        const danica = new Howl({
             src: [danicaSound],
             html5: true
         });
-        var tony = new Howl({
+        const tony = new Howl({
             src: [tonySound],
             html5: true
         });
-        var iain = new Howl({
+        const iain = new Howl({
             src: [iainSound],
             html5: true
         });
-        var kelly = new Howl({
+        const kelly = new Howl({
             src: [kellySound],
             html5: true
         });
-        var sean = new Howl({
+        const sean = new Howl({
             src: [seanSound],
             html5: true
         });
-        var matt = new Howl ({
+        const matt = new Howl ({
             src: [mattSound]
-        })
+        });
+        const julia = new Howl ({
+            src: [juliaSound]
+        });
+        const mike = new Howl ({
+            src: [mikeSound]
+        });
         this.sounds = new Map();
         this.sounds.set('Alyssa', alyssa);
         this.sounds.set('Danica', danica);
@@ -45,6 +53,8 @@ class walkupService {
         this.sounds.set('Kelly', kelly);
         this.sounds.set('Sean', sean);
         this.sounds.set('Matt', matt);
+        this.sounds.set('Julia', julia);
+        this.sounds.set('Mike', mike);
     }
 
     playWalkup(playerName){
@@ -60,7 +70,7 @@ class walkupService {
             setTimeout(function() { 
                 myHowl.play();
                 myHowl.fade(1, 0, 30000);
-            }, 2000);
+            }, 1500);
         }
         
     }

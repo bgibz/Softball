@@ -231,14 +231,14 @@ class PlayerForm extends React.Component{
                     <Lineup entries={this.state.lineup} sendLineup={this.props.getLineup} />
                 </div>
             </div>
-            <div className = "container">
+            <div className = "container-fluid">
             <div className="row">
                 <div className="col-sm-6">
                     <h3>Add New Player to Roster</h3>
                 </div>
             </div>
             <form onSubmit={this.handleSubmit}>
-            <div className = "container">
+            <div className = "container-fluid">
             <div className = "form-group row">
                     <div className = "col-sm-2">
                         <label>

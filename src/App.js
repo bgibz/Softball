@@ -194,7 +194,7 @@ class App extends React.Component {
         </div>
       </div>
       <hr></hr>
-      <div className="Container">
+      <div className="container-fluid">
         <PlayerForm getLineup={this.getLineup}/>
       </div> 
       </div>

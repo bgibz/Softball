@@ -37,6 +37,11 @@
   background-color: ghostwhite;
 }
 
+.lineupList {
+  background-color: ghostwhite;
+  display: inline-block;
+}
+
 .male {
   background-color: lightblue;
   width: 200px;

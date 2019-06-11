@@ -12,10 +12,10 @@ class Lineup extends React.Component {
     return (
       <div className="lineup">
         <h4>Lineup</h4>
-        <ol className="lineupList">
-          {players}
-        </ol>
-      </div>
+          <ol className="lineupList">
+            {players}
+          </ol>
+        </div>
     );
   }
 }
