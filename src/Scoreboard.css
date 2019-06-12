@@ -82,3 +82,7 @@ button.tableButton .btn .btn-secondary {
 table.table .table-dark {
   table-layout: fixed;
 }
+
+table.scoreTable {
+  color: white;
+}

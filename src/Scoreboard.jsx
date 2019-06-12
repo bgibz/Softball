@@ -13,7 +13,8 @@ class Scoreboard extends React.Component {
             awayscore: 0,
             home: 'Home',
             away: 'Away',
-            outs: 0
+            outs: 0,
+            scoreboard: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -77,24 +78,48 @@ class Scoreboard extends React.Component {
 
     incrementScore(team) {
         if (team === "home") {
+            var scoreboardIndex = (this.state.inning * 2) - 2;
+            var scoreboardCopy = this.state.scoreboard;
+            scoreboardCopy[scoreboardIndex] += 1;
             this.setState((state) => {
-                return { homescore: state.homescore + 1 }
+                return { 
+                    homescore: state.homescore + 1,
+                    scoreboard: scoreboardCopy
+                 }
             });
         } else{
+            var scoreboardIndex = (this.state.inning * 2) - 1;
+            var scoreboardCopy = this.state.scoreboard;
+            scoreboardCopy[scoreboardIndex] += 1;
             this.setState((state) => {
-                return { awayscore: state.awayscore + 1 }
+                return { 
+                    awayscore: state.awayscore + 1,
+                    scoreboard: scoreboardCopy 
+                }
             });
         }
     }
 
     decrementScore(team) {
         if (team === "home") {
+            var scoreboardIndex = (this.state.inning * 2) - 2;
+            var scoreboardCopy = this.state.scoreboard;
+            scoreboardCopy[scoreboardIndex] -= 1;
             this.setState((state) => {
-                return { homescore: state.homescore - 1 }
+                return { 
+                    homescore: state.homescore - 1,
+                    scoreboard: scoreboardCopy 
+                }
             });
         } else{
             this.setState((state) => {
-                return { awayscore: state.awayscore - 1 }
+                var scoreboardIndex = (this.state.inning * 2) - 1;
+                var scoreboardCopy = this.state.scoreboard;
+                scoreboardCopy[scoreboardIndex] -= 1;
+                return { 
+                    awayscore: state.awayscore - 1,
+                    scoreboard: scoreboardCopy 
+                }
             });
         }
     }
@@ -196,6 +221,49 @@ class Scoreboard extends React.Component {
                         < UpcomingBatters entries={this.props.topOfOrder} nextBatter = {this.props.nextBatter} />
                     </div>
                 </div>
+                    <div className = "row">
+                    <div className = "col-sm-12">
+                    <table className="table table-bordered scoreTable">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>R</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Home</td>
+                                <td>{this.state.scoreboard[0]}</td>
+                                <td>{this.state.scoreboard[2]}</td>
+                                <td>{this.state.scoreboard[4]}</td>
+                                <td>{this.state.scoreboard[6]}</td>
+                                <td>{this.state.scoreboard[8]}</td>
+                                <td>{this.state.scoreboard[10]}</td>
+                                <td>{this.state.scoreboard[12]}</td>
+                                <td>{this.state.homescore}</td>
+                            </tr>
+                            <tr>
+                                <td>Away</td>
+                                <td>{this.state.scoreboard[1]}</td>
+                                <td>{this.state.scoreboard[3]}</td>
+                                <td>{this.state.scoreboard[5]}</td>
+                                <td>{this.state.scoreboard[7]}</td>
+                                <td>{this.state.scoreboard[9]}</td>
+                                <td>{this.state.scoreboard[11]}</td>
+                                <td>{this.state.scoreboard[13]}</td>
+                                <td>{this.state.awayscore}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    </div>
                 </div>
             </div>
         );

@@ -8,7 +8,7 @@ import seanSound from './media/Sean.mp3';
 import mattSound from './media/Matt.mp3';
 import juliaSound from './media/Julia.mp3';
 import mikeSound from './media/Mike.mp3';
-
+import sarahSound from './media/Sarah.mp3';
 
 class walkupService {
     constructor() {
@@ -45,6 +45,9 @@ class walkupService {
         const mike = new Howl ({
             src: [mikeSound]
         });
+        const sarah = new Howl ({
+            src:[sarahSound]
+        });
         this.sounds = new Map();
         this.sounds.set('Alyssa', alyssa);
         this.sounds.set('Danica', danica);
@@ -55,6 +58,7 @@ class walkupService {
         this.sounds.set('Matt', matt);
         this.sounds.set('Julia', julia);
         this.sounds.set('Mike', mike);
+        this.sounds.set('Sarah', sarah);
     }
 
     playWalkup(playerName){
