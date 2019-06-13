@@ -9,6 +9,7 @@ class PlayerForm extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlePlayerClick = this.handlePlayerClick.bind(this);
+        this.adjustLineup = this.adjustLineup.bind(this);
         var DMAG = [
             {
             name: "Brendan",
@@ -202,12 +203,14 @@ class PlayerForm extends React.Component{
         this.props.getLineup(currentLineup);
     }
 
-    arraymove(arr, fromIndex, toIndex) {
-        var element = arr[fromIndex];
-        arr.splice(fromIndex, 1);
-        arr.splice(toIndex, 0, element);
+    adjustLineup(data) {
+        this.setState(() => {
+            return {
+                lineup: data
+            }
+        });
+        this.props.getLineup(data);
     }
-    
     render() {
         return (
         <div className="RosterMain">
@@ -216,7 +219,7 @@ class PlayerForm extends React.Component{
                     <Players entries={this.state.players}/>
                 </div>
                 <div className = "col-sm-6">
-                    <Lineup entries={this.state.lineup} sendLineup={this.props.getLineup} />
+                    <Lineup entries={this.state.lineup} sendLineup={this.adjustLineup} />
                 </div>
             </div>
             <div className = "container-fluid">
