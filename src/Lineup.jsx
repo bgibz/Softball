@@ -1,6 +1,11 @@
 import React from 'react';
 
 class Lineup extends React.Component {
+  constructor(props) {
+    super(props);
+    this.movePlayer = this.movePlayer.bind(this);
+  }
+
   movePlayer(playerName, direction) {
     var count = 0;
     var index;
@@ -23,20 +28,32 @@ class Lineup extends React.Component {
     arr.splice(toIndex, 0, element);
 }
 
-  createPlayers(item) {
-      return <li key={item.key} className={item.gender}>{item.name}</li>
+  createPlayers(item, funct) {
+      return <div className="lineupCard row">
+              <div className="lineupSidebar col-xs-1">
+                <div className="lineupUp">
+                  <span className = 'fa fa-caret-up' onClick = {item.handleClick(item.name, 1)}></span>
+                </div>
+                <div className="lineupDown">
+                  <span className = "fa fa-caret-down" onClick = {item.handleClick(item.name, -1)}></span>
+                </div>
+              </div>
+              <div className = "col-xs-10">
+                <li key={item.key} className={item.gender}>{item.name}</li>
+              </div>
+            </div>
     }
      
     render() {
     var playerEntries = this.props.entries;
     var players = playerEntries.map(this.createPlayers);
-  
+      
     return (
       <div className="lineup">
         <h4>Lineup</h4>
-          <ol className="lineupList">
+          <ul className="lineupList">
             {players}
-          </ol>
+          </ul>
         </div>
     );
   }

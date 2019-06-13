@@ -154,10 +154,11 @@ class PlayerForm extends React.Component{
     }
 
     handlePlayerClick(name, gender, key, selected){
+        var funct = this.movePlayer;
         var player = {
             name: name,
             gender: gender,
-            key: key
+            key: key,
         };
         var currentLineup = this.state.lineup;
         var currentPlayers = this.state.players;
@@ -211,6 +212,7 @@ class PlayerForm extends React.Component{
         });
         this.props.getLineup(data);
     }
+
     render() {
         return (
         <div className="RosterMain">

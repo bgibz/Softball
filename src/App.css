@@ -38,8 +38,22 @@
 }
 
 .lineupList {
-  background-color: ghostwhite;
   display: inline-block;
+  list-style: none;
+}
+
+.lineupUp {
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
+.lineupDown {
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
+.lineupCard {
+  height: 150%;
 }
 
 .male {
