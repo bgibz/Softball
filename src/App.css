@@ -43,17 +43,21 @@
 }
 
 .lineupUp {
-  margin-top: 6px;
+  margin-top: 0px;
   margin-left: 6px;
 }
 
 .lineupDown {
-  margin-top: 6px;
+  margin-bottom: 5px;
   margin-left: 6px;
 }
 
 .lineupCard {
   height: 150%;
+}
+
+.lineupSidebar {
+  font-size: 20px;
 }
 
 .male {

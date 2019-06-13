@@ -4,6 +4,7 @@ class Lineup extends React.Component {
   constructor(props) {
     super(props);
     this.movePlayer = this.movePlayer.bind(this);
+    this.createPlayers = this.createPlayers.bind(this);
   }
 
   movePlayer(playerName, direction) {
@@ -18,7 +19,7 @@ class Lineup extends React.Component {
       count++
     }
     if ((index + direction >= 0) && (index + direction <= entries.length))
-      this.arrayMove(entries, index)
+      this.arrayMove(entries, index, index+direction);
     this.props.sendLineup(entries);
   }
 
@@ -28,14 +29,14 @@ class Lineup extends React.Component {
     arr.splice(toIndex, 0, element);
 }
 
-  createPlayers(item, funct) {
+  createPlayers(item) {
       return <div className="lineupCard row">
               <div className="lineupSidebar col-xs-1">
                 <div className="lineupUp">
-                  <span className = 'fa fa-caret-up' onClick = {item.handleClick(item.name, 1)}></span>
+                  <span className = 'fa fa-caret-up' onClick = {() => this.movePlayer(item.name, -1)}></span>
                 </div>
                 <div className="lineupDown">
-                  <span className = "fa fa-caret-down" onClick = {item.handleClick(item.name, -1)}></span>
+                  <span className = "fa fa-caret-down" onClick = {() => this.movePlayer(item.name, 1)}></span>
                 </div>
               </div>
               <div className = "col-xs-10">
@@ -46,7 +47,10 @@ class Lineup extends React.Component {
      
     render() {
     var playerEntries = this.props.entries;
-    var players = playerEntries.map(this.createPlayers);
+    var players = [];
+    for (let i = 0; i < playerEntries.length; i++) {
+      players[i] = this.createPlayers(playerEntries[i]);
+    }
       
     return (
       <div className="lineup">

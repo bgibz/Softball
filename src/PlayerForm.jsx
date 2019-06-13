@@ -154,7 +154,6 @@ class PlayerForm extends React.Component{
     }
 
     handlePlayerClick(name, gender, key, selected){
-        var funct = this.movePlayer;
         var player = {
             name: name,
             gender: gender,
