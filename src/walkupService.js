@@ -9,6 +9,10 @@ import mattSound from './media/Matt.mp3';
 import juliaSound from './media/Julia.mp3';
 import mikeSound from './media/Mike.mp3';
 import sarahSound from './media/Sarah.mp3';
+import danSound from './media/Dan.mp3';
+import allisonSound from './media/Allison.mp3';
+import robbieSound from './media/Robbie.mp3';
+import allieSound from './media/Allie.mp3';
 
 class walkupService {
     constructor() {
@@ -48,6 +52,18 @@ class walkupService {
         const sarah = new Howl ({
             src:[sarahSound]
         });
+        const dan = new Howl ({
+            src: [danSound]
+        });
+        const allison = new Howl ({
+            src: [allisonSound]
+        });
+        const robbie = new Howl ({
+            src: [robbieSound]
+        });
+        const allie = new Howl ({
+            src: [allieSound]
+        });
         this.sounds = new Map();
         this.sounds.set('Alyssa', alyssa);
         this.sounds.set('Danica', danica);
@@ -59,6 +75,10 @@ class walkupService {
         this.sounds.set('Julia', julia);
         this.sounds.set('Mike', mike);
         this.sounds.set('Sarah', sarah);
+        this.sounds.set('Dan', dan);
+        this.sounds.set('Allison', allison);
+        this.sounds.set('Robbie', robbie);
+        this.sounds.set('Allie', allie);
     }
 
     playWalkup(playerName){

@@ -14,7 +14,7 @@ class Scoreboard extends React.Component {
             home: 'Home',
             away: 'Away',
             outs: 0,
-            scoreboard: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            scoreboard: [0,'-','-','-','-','-','-','-','-','-','-','-','-','-',0,0]
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -36,19 +36,25 @@ class Scoreboard extends React.Component {
     }
 
     endhalf(action) {
+        var scoreboardCopy = this.state.scoreboard;
+        var scoreboardIndex;
         if (this.state.half === "top") {
             if (action === "next") {
+                scoreboardIndex = (this.state.inning * 2) - 1;
+                if (scoreboardCopy[scoreboardIndex] === "-")
+                    scoreboardCopy[scoreboardIndex] = 0;
                 this.setState(() => {
                     return { 
                         half: "bottom",
-                        outs: 0
+                        outs: 0,
+                        scoreboard: scoreboardCopy
                     }
                 });
             }
             if (action === "last" && this.state.inning > 1) {
                 this.setState((state) => {
                     return {
-                        half: "top",
+                        half: "bottom",
                         inning: state.inning - 1,
                         outs: 0
                     }
@@ -56,11 +62,15 @@ class Scoreboard extends React.Component {
             }
         } else{
             if (action === "next") {
+                scoreboardIndex = (this.state.inning) * 2;
+                if(scoreboardCopy[scoreboardIndex] === "-")
+                    scoreboardCopy[scoreboardIndex] = 0;
                 this.setState((state) => {
                     return { 
                         half: "top",
                         inning: state.inning + 1,
-                        outs: 0 
+                        outs: 0,
+                        scoreboard: scoreboardCopy
                     }
                 });
             }
