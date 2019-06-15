@@ -24,14 +24,16 @@ class UpcomingBatters extends React.Component {
             <table className = "table table-dark">
                 <tbody>
                     <tr>
-                        <td>At Bat <span><button className='btn btn-primary btn-sm' onClick={(e) => this.props.nextBatter()}>Next Batter</button></span></td>
-                        <td>On Deck</td>
-                        <td>In The Hole</td>
+                        <td><span><button className='btn btn-light btn-sm' onClick={(e) => this.props.nextBatter()}>Next Batter</button></span></td>
+                        <td colSpan = '2'>At Bat </td>
+                        <td colSpan = '2'>On Deck</td>
+                        <td colSpan = '2'>In The Hole</td>
                     </tr>
                     <tr>
-                        <td> {atBat}</td>
-                        <td> {onDeck}</td>
-                        <td> {inHole}</td>
+                        <td></td>
+                        <td colSpan = '2'> {atBat}</td>
+                        <td colSpan = '2'> {onDeck}</td>
+                        <td colSpan = '2'> {inHole}</td>
                     </tr>
                 </tbody>
             </table>

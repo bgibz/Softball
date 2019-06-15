@@ -87,9 +87,10 @@ class Scoreboard extends React.Component {
     }
 
     incrementScore(team) {
+        var scoreboardCopy = this.state.scoreboard;
+        var scoreboardIndex;
         if (team === "home") {
-            var scoreboardIndex = (this.state.inning * 2) - 2;
-            var scoreboardCopy = this.state.scoreboard;
+            scoreboardIndex = (this.state.inning * 2) - 2;
             scoreboardCopy[scoreboardIndex] += 1;
             this.setState((state) => {
                 return { 
@@ -98,8 +99,7 @@ class Scoreboard extends React.Component {
                  }
             });
         } else{
-            var scoreboardIndex = (this.state.inning * 2) - 1;
-            var scoreboardCopy = this.state.scoreboard;
+            scoreboardIndex = (this.state.inning * 2) - 1;
             scoreboardCopy[scoreboardIndex] += 1;
             this.setState((state) => {
                 return { 
