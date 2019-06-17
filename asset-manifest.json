@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/softball/static/css/main.1fc24f48.chunk.css",
+    "main.js": "/softball/static/js/main.1c2582db.chunk.js",
+    "main.js.map": "/softball/static/js/main.1c2582db.chunk.js.map",
+    "runtime~main.js": "/softball/static/js/runtime~main.2e4b207d.js",
+    "runtime~main.js.map": "/softball/static/js/runtime~main.2e4b207d.js.map",
+    "static/js/2.c34f57a1.chunk.js": "/softball/static/js/2.c34f57a1.chunk.js",
+    "static/js/2.c34f57a1.chunk.js.map": "/softball/static/js/2.c34f57a1.chunk.js.map",
+    "index.html": "/softball/index.html",
+    "precache-manifest.2c6f6242e8dcd6af9e9912b9ab6a1dc6.js": "/softball/precache-manifest.2c6f6242e8dcd6af9e9912b9ab6a1dc6.js",
+    "service-worker.js": "/softball/service-worker.js",
+    "static/css/main.1fc24f48.chunk.css.map": "/softball/static/css/main.1fc24f48.chunk.css.map",
+    "static/media/Allie.mp3": "/softball/static/media/Allie.800c0fa4.mp3",
+    "static/media/Allison.mp3": "/softball/static/media/Allison.19531981.mp3",
+    "static/media/Alyssa.mp3": "/softball/static/media/Alyssa.cc9d54e5.mp3",
+    "static/media/Brendan.mp3": "/softball/static/media/Brendan.52907b7d.mp3",
+    "static/media/Dan.mp3": "/softball/static/media/Dan.59720df6.mp3",
+    "static/media/Danica.mp3": "/softball/static/media/Danica.a2b3a9fe.mp3",
+    "static/media/Emma.mp3": "/softball/static/media/Emma.0f6b9a7c.mp3",
+    "static/media/Iain.mp3": "/softball/static/media/Iain.516b6b10.mp3",
+    "static/media/Julia.mp3": "/softball/static/media/Julia.455f80bb.mp3",
+    "static/media/Kelly.mp3": "/softball/static/media/Kelly.bb692bdc.mp3",
+    "static/media/Kevin.mp3": "/softball/static/media/Kevin.9b263cc0.mp3",
+    "static/media/Matt.mp3": "/softball/static/media/Matt.8f1ac028.mp3",
+    "static/media/Mike.mp3": "/softball/static/media/Mike.a956024c.mp3",
+    "static/media/Robbie.mp3": "/softball/static/media/Robbie.6df940b1.mp3",
+    "static/media/Sarah.mp3": "/softball/static/media/Sarah.8d20928d.mp3",
+    "static/media/Sean.mp3": "/softball/static/media/Sean.fc528c74.mp3",
+    "static/media/Tony.mp3": "/softball/static/media/Tony.90f91bee.mp3"
+  }
+}
