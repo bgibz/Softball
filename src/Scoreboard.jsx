@@ -14,7 +14,7 @@ class Scoreboard extends React.Component {
             home: 'Home',
             away: 'Away',
             outs: 0,
-            scoreboard: [0,'-','-','-','-','-','-','-','-','-','-','-','-','-',0,0]
+            scoreboard: [0,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',0,0]
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -41,7 +41,7 @@ class Scoreboard extends React.Component {
         if (this.state.half === "top") {
             if (action === "next") {
                 scoreboardIndex = (this.state.inning * 2) - 1;
-                if (scoreboardCopy[scoreboardIndex] === "-")
+                if (scoreboardCopy[scoreboardIndex] === " ")
                     scoreboardCopy[scoreboardIndex] = 0;
                 this.setState(() => {
                     return { 
@@ -63,7 +63,7 @@ class Scoreboard extends React.Component {
         } else{
             if (action === "next") {
                 scoreboardIndex = (this.state.inning) * 2;
-                if(scoreboardCopy[scoreboardIndex] === "-")
+                if(scoreboardCopy[scoreboardIndex] === " ")
                     scoreboardCopy[scoreboardIndex] = 0;
                 this.setState((state) => {
                     return { 
@@ -244,6 +244,7 @@ class Scoreboard extends React.Component {
                                 <td>5</td>
                                 <td>6</td>
                                 <td>7</td>
+                                <td></td>
                                 <td>R</td>
                             </tr>
                         </thead>
@@ -257,6 +258,7 @@ class Scoreboard extends React.Component {
                                 <td>{this.state.scoreboard[8]}</td>
                                 <td>{this.state.scoreboard[10]}</td>
                                 <td>{this.state.scoreboard[12]}</td>
+                                <td></td>
                                 <td>{this.state.homescore}</td>
                             </tr>
                             <tr>
@@ -268,6 +270,7 @@ class Scoreboard extends React.Component {
                                 <td>{this.state.scoreboard[9]}</td>
                                 <td>{this.state.scoreboard[11]}</td>
                                 <td>{this.state.scoreboard[13]}</td>
+                                <td></td>
                                 <td>{this.state.awayscore}</td>
                             </tr>
                         </tbody>
