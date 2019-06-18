@@ -217,10 +217,10 @@ class PlayerForm extends React.Component{
         <div className="RosterMain">
             <div className = "container-fluid">
                 <div className = "col-sm-6">
-                    <Players entries={this.state.players}/>
+                    <Lineup entries={this.state.lineup} sendLineup={this.adjustLineup} />
                 </div>
                 <div className = "col-sm-6">
-                    <Lineup entries={this.state.lineup} sendLineup={this.adjustLineup} />
+                    <Players entries={this.state.players}/>
                 </div>
             </div>
             <div className = "container-fluid">

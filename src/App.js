@@ -44,7 +44,7 @@ class App extends React.Component {
   }
 
   setInitialGender(event) {
-    // Only do something before the game has started
+    // Only do something at top of the order
     if (this.state.maleNext === 0 && this.state.femaleNext === 0) {
       if (event.target.checked) {
         this.setState(() => {

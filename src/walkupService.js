@@ -16,6 +16,7 @@ import allieSound from './media/Allie.mp3';
 import emmaSound from './media/Emma.mp3';
 import brendanSound from './media/Brendan.mp3';
 import kevinSound from './media/Kevin.mp3';
+import ryanSound from './media/Ryan.mp3';
 
 class walkupService {
     constructor() {
@@ -76,6 +77,9 @@ class walkupService {
         const kevin = new Howl ({
             src: [kevinSound]
         });
+        const ryan = new Howl ({
+            src: [ryanSound]
+        });
         this.sounds = new Map();
         this.sounds.set('Alyssa', alyssa);
         this.sounds.set('Danica', danica);
@@ -94,6 +98,7 @@ class walkupService {
         this.sounds.set('Emma', emma);
         this.sounds.set('Brendan', brendan);
         this.sounds.set('Kevin', kevin);
+        this.sounds.set('Ryan, ryan');
     }
 
     playWalkup(playerName){
