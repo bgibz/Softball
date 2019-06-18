@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Softball/precache-manifest.4bb1dae6ca9f8764e1804651a09a87f9.js"
+  "/Softball/precache-manifest.6ea229c76caab70f7586482bc3d3e1e0.js"
 );
 
 self.addEventListener('message', (event) => {
