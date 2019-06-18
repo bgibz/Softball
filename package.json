@@ -2,7 +2,7 @@
   "name": "lineup",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bgibz.github.io/softball",
+  "homepage": "https://bgibz.github.io/Softball/",
   "dependencies": {
     "bootstrap": "^3.4.1",
     "gh-pages": "^2.0.1",
