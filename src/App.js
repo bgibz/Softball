@@ -17,13 +17,15 @@ class App extends React.Component {
       femaleNext: 0,
       flag: true,
       doubleGender: "none",
-      genderAtBat: "male"
+      genderAtBat: "male",
+      media: true
     };
     this.getLineup = this.getLineup.bind(this);
     this.triggerNext = this.triggerNext.bind(this);
     this.setInitialGender = this.setInitialGender.bind(this);
     this.setSiamese = this.setSiamese.bind(this);
     this.walkupService = new walkupService();
+    this.toggleMute = this.toggleMute.bind(this);
   }
 
   getLineup(data) {
@@ -130,22 +132,36 @@ class App extends React.Component {
       genderAtBat: nextAtBat
       }
     });
-    if (order.length > 0)
+    if (order.length > 0 && this.state.media)
       this.walkupService.playWalkup(order[0].name)
   }
 
+  toggleMute() {
+    if (this.state.media){
+      this.walkupService.stopAll();
+      this.setState({
+        media: false
+      });
+    } else {
+      this.setState({
+        media: true
+      });
+    }
+  }
 
   render() {
-    var noneButton = "btn btn-secondary"
+    var noneButton = "btn btn-secondary";
     if (this.state.doubleGender === "none")
-      noneButton = "btn btn-success"
-    var maleButton = "btn btn-secondary"
+      noneButton = "btn btn-success";
+    var maleButton = "btn btn-secondary";
     if (this.state.doubleGender === 'male')
-      maleButton = "btn btn-success"
-    var femaleButton = "btn btn-secondary"
+      maleButton = "btn btn-success";
+    var femaleButton = "btn btn-secondary";
     if (this.state.doubleGender === 'female')
-      femaleButton = "btn btn-success"
-
+      femaleButton = "btn btn-success";
+    var muteButton = "btn btn-secondary";
+    if (!this.state.media)
+      muteButton = "btn btn-danger";
     return (
       <div className="App">
       <div className="App-header jumbotron">
@@ -165,6 +181,7 @@ class App extends React.Component {
               <tr>
                 <th colSpan="3">Siamese Batters</th>
                 <th colSpan = "4">Starting Gender</th>
+                <th>Mute</th>
               </tr>
             </thead>
             <tbody>
@@ -187,6 +204,9 @@ class App extends React.Component {
                 </div>
                 </td>
                 <td><span className="toggleLabelRight"><strong> F </strong></span></td>
+                <td><button className = {muteButton} onClick = {(e) => this.toggleMute()}>
+                  <i className = "fa fa-volume-off"></i>
+                </button></td>
               </tr>
             </tbody>
           </table>

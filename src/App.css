@@ -82,6 +82,10 @@ table thead th {
   text-align:center;
 }
 
+table td.toggleSquare{
+  min-width: 60px;
+}
+
 .scoreboardOuts {
   font-size: 200%
 }

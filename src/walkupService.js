@@ -98,7 +98,7 @@ class walkupService {
         this.sounds.set('Emma', emma);
         this.sounds.set('Brendan', brendan);
         this.sounds.set('Kevin', kevin);
-        this.sounds.set('Ryan, ryan');
+        this.sounds.set('Ryan', ryan);
     }
 
     playWalkup(playerName){
@@ -115,8 +115,13 @@ class walkupService {
                 myHowl.play();
                 myHowl.fade(1, 0, 30000);
             }, 1000);
+        }   
+    }
+
+    stopAll() {
+        for (var [key, value] of this.sounds) {
+                value.stop();
         }
-        
     }
 
 }
