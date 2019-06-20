@@ -89,21 +89,23 @@ class Scoreboard extends React.Component {
     incrementScore(team) {
         var scoreboardCopy = this.state.scoreboard;
         var scoreboardIndex;
-        if (team === "home") {
+        if (team === "away") {
             scoreboardIndex = (this.state.inning * 2) - 2;
             scoreboardCopy[scoreboardIndex] += 1;
             this.setState((state) => {
                 return { 
-                    homescore: state.homescore + 1,
+                    awayscore: state.awayscore + 1,
                     scoreboard: scoreboardCopy
                  }
             });
         } else{
             scoreboardIndex = (this.state.inning * 2) - 1;
+            if (scoreboardCopy[scoreboardIndex] === " ")
+                scoreboardCopy[scoreboardIndex] = 0;
             scoreboardCopy[scoreboardIndex] += 1;
             this.setState((state) => {
                 return { 
-                    awayscore: state.awayscore + 1,
+                    homescore: state.homescore + 1,
                     scoreboard: scoreboardCopy 
                 }
             });
@@ -111,13 +113,13 @@ class Scoreboard extends React.Component {
     }
 
     decrementScore(team) {
-        if (team === "home") {
+        if (team === "away") {
             var scoreboardIndex = (this.state.inning * 2) - 2;
             var scoreboardCopy = this.state.scoreboard;
             scoreboardCopy[scoreboardIndex] -= 1;
             this.setState((state) => {
                 return { 
-                    homescore: state.homescore - 1,
+                    awayscore: state.awayscore - 1,
                     scoreboard: scoreboardCopy 
                 }
             });
@@ -127,7 +129,7 @@ class Scoreboard extends React.Component {
                 var scoreboardCopy = this.state.scoreboard;
                 scoreboardCopy[scoreboardIndex] -= 1;
                 return { 
-                    awayscore: state.awayscore - 1,
+                    homescore: state.homescore - 1,
                     scoreboard: scoreboardCopy 
                 }
             });
@@ -178,16 +180,16 @@ class Scoreboard extends React.Component {
                     <table className = "greenTable">
                         <tbody>
                             <tr>
-                                <th>{this.state.home}</th>
+                                <th>{this.state.away}</th>
                                 <td>
                                     <table className = "hiddenTable">                                
                                         <tbody>
                                             <tr>
-                                            <td rowSpan = '2'>{this.state.homescore}</td>
-                                            <td><button className='btn btn-secondary btn-sm' onClick = {(e) => this.incrementScore("home")}><span className = 'fa fa-caret-up'></span></button></td>
+                                            <td rowSpan = '2'>{this.state.awayscore}</td>
+                                            <td><button className='btn btn-secondary btn-sm' onClick = {(e) => this.incrementScore("away")}><span className = 'fa fa-caret-up'></span></button></td>
                                             </tr>
                                             <tr>
-                                                <td><button className = 'btn btn-secondary btn-sm' onClick = {(e) => this.decrementScore("home")}><span className = 'fa fa-caret-down'></span></button></td>
+                                                <td><button className = 'btn btn-secondary btn-sm' onClick = {(e) => this.decrementScore("away")}><span className = 'fa fa-caret-down'></span></button></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -199,16 +201,16 @@ class Scoreboard extends React.Component {
                                 </th>
                             </tr>
                             <tr>
-                                <th>{this.state.away}</th>
+                                <th>{this.state.home}</th>
                                 <td>
                                     <table className = "hiddenTable">                                
                                         <tbody>
                                             <tr>
-                                            <td rowSpan = '2'>{this.state.awayscore}</td>
-                                            <td><button className='btn btn-secondary btn-sm' onClick = {(e) => this.incrementScore("away")}><span className = 'fa fa-caret-up'></span></button></td>
+                                            <td rowSpan = '2'>{this.state.homescore}</td>
+                                            <td><button className='btn btn-secondary btn-sm' onClick = {(e) => this.incrementScore("home")}><span className = 'fa fa-caret-up'></span></button></td>
                                             </tr>
                                             <tr>
-                                                <td><button className = 'btn btn-secondary btn-sm' onClick = {(e) => this.decrementScore("away")}><span className = 'fa fa-caret-down'></span></button></td>
+                                                <td><button className = 'btn btn-secondary btn-sm' onClick = {(e) => this.decrementScore("home")}><span className = 'fa fa-caret-down'></span></button></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -250,7 +252,7 @@ class Scoreboard extends React.Component {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Home</td>
+                                <td>Away</td>
                                 <td>{this.state.scoreboard[0]}</td>
                                 <td>{this.state.scoreboard[2]}</td>
                                 <td>{this.state.scoreboard[4]}</td>
@@ -259,10 +261,10 @@ class Scoreboard extends React.Component {
                                 <td>{this.state.scoreboard[10]}</td>
                                 <td>{this.state.scoreboard[12]}</td>
                                 <td></td>
-                                <td>{this.state.homescore}</td>
+                                <td>{this.state.awayscore}</td>
                             </tr>
                             <tr>
-                                <td>Away</td>
+                                <td>Home</td>
                                 <td>{this.state.scoreboard[1]}</td>
                                 <td>{this.state.scoreboard[3]}</td>
                                 <td>{this.state.scoreboard[5]}</td>
@@ -271,7 +273,7 @@ class Scoreboard extends React.Component {
                                 <td>{this.state.scoreboard[11]}</td>
                                 <td>{this.state.scoreboard[13]}</td>
                                 <td></td>
-                                <td>{this.state.awayscore}</td>
+                                <td>{this.state.homescore}</td>
                             </tr>
                         </tbody>
                     </table>

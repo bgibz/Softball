@@ -72,7 +72,6 @@ table.greenTable tfoot .links a{
 table.hiddenTable td {
   border-collapse: collapse;
   border: none;
-  min-width: 60px;
 }
 
 button.tableButton .btn .btn-secondary {

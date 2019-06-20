@@ -111,10 +111,10 @@ class walkupService {
             }
         }
         if (myHowl !== undefined){
+            myHowl.play();
             setTimeout(function() { 
-                myHowl.play();
-                myHowl.fade(1, 0, 30000);
-            }, 1000);
+                myHowl.fade(1, 0, 5000);
+            }, 25000);
         }   
     }
 
