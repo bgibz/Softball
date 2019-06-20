@@ -221,10 +221,10 @@ class Scoreboard extends React.Component {
                 </div>
                 </div>
                 <div className = "row">
-                <div className = "col-sm-4 offset-sm-2 scoreboardOuts">
+                <div className = "col-xs-7 offset-sm-2 scoreboardOuts">
                     <p>Out:  <span dangerouslySetInnerHTML={{__html: outs}}></span></p>
                 </div>
-                <div className = "col-sm-3">
+                <div className = "col-xs-3">
                     <button className='btn btn-danger' onClick={(e) => this.addOut()}>Out!</button>
                 </div>
                 </div>

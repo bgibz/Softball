@@ -150,18 +150,18 @@ class App extends React.Component {
   }
 
   render() {
-    var noneButton = "btn btn-secondary";
+    var noneButton = "btn btn-secondary btn-sm";
     if (this.state.doubleGender === "none")
-      noneButton = "btn btn-success";
-    var maleButton = "btn btn-secondary";
+      noneButton = "btn btn-success btn-sm";
+    var maleButton = "btn btn-secondary btn-sm";
     if (this.state.doubleGender === 'male')
-      maleButton = "btn btn-success";
-    var femaleButton = "btn btn-secondary";
+      maleButton = "btn btn-success btn-sm";
+    var femaleButton = "btn btn-secondary btn-sm";
     if (this.state.doubleGender === 'female')
-      femaleButton = "btn btn-success";
-    var muteButton = "btn btn-secondary";
+      femaleButton = "btn btn-success btn-sm";
+    var muteButton = "btn btn-secondary btn-sm";
     if (!this.state.media)
-      muteButton = "btn btn-danger";
+      muteButton = "btn btn-danger btn-sm";
     return (
       <div className="App">
       <div className="App-header jumbotron">
@@ -176,40 +176,42 @@ class App extends React.Component {
         </div>
           <div className="row">
           <div className = "col-sm-12">
-          <table className="table table-borderless">
-            <thead>
-              <tr>
-                <th colSpan="3">Siamese Batters</th>
-                <th colSpan = "4">Starting Gender</th>
-                <th>Mute</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                <button className = {noneButton} onClick = {(e) => this.setSiamese("none")}>None</button>
-                </td>
-                <td>
-                <button className = {maleButton} onClick = {(e) => this.setSiamese("male")}>Male</button>
-                </td>
-                <td>
-                <button className = {femaleButton} onClick = {(e) => this.setSiamese("female")}>Female</button>
-                </td>
-                <td><span className="toggleLabelLeft"><strong> M </strong></span></td>
-                <td colSpan='2'>
-                <div className="toggle">
-                  <input type="checkbox" className="check" id="genderToggle" onChange= {this.setInitialGender}></input>
-                  <b className="b switch"></b>
-                  <b className="b track"></b>
-                </div>
-                </td>
-                <td><span className="toggleLabelRight"><strong> F </strong></span></td>
-                <td><button className = {muteButton} onClick = {(e) => this.toggleMute()}>
-                  <i className = "fa fa-volume-off"></i>
-                </button></td>
-              </tr>
-            </tbody>
-          </table>
+            <div className = "table-responsive">
+            <table className="table table-borderless">
+              <thead>
+                <tr>
+                  <th colSpan="3">Siamese Batters</th>
+                  <th colSpan = "4">Starting Gender</th>
+                  <th>Mute</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                  <button className = {noneButton} onClick = {(e) => this.setSiamese("none")}>None</button>
+                  </td>
+                  <td>
+                  <button className = {maleButton} onClick = {(e) => this.setSiamese("male")}>Male</button>
+                  </td>
+                  <td>
+                  <button className = {femaleButton} onClick = {(e) => this.setSiamese("female")}>Female</button>
+                  </td>
+                  <td><span className="toggleLabelLeft"><strong> M </strong></span></td>
+                  <td colSpan='2'>
+                  <div className="toggle">
+                    <input type="checkbox" className="check" id="genderToggle" onChange= {this.setInitialGender}></input>
+                    <b className="b switch"></b>
+                    <b className="b track"></b>
+                  </div>
+                  </td>
+                  <td><span className="toggleLabelRight"><strong> F </strong></span></td>
+                  <td><button className = {muteButton} onClick = {(e) => this.toggleMute()}>
+                    <i className = "fa fa-volume-off"></i>
+                  </button></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
           </div>
         </div>
       </div>

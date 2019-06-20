@@ -230,41 +230,41 @@ class PlayerForm extends React.Component{
                 </div>
             </div>
             <form onSubmit={this.handleSubmit}>
-            <div className = "container-fluid">
-            <div className = "form-group row">
-                    <div className = "col-sm-2">
-                        <label>
-                        Name:
-                        </label>
+                <div className = "container-fluid">
+                    <div className = "form-group row">
+                            <div className = "col-sm-2">
+                                <label>
+                                Name:
+                                </label>
+                            </div>
+                                <div className = "col-sm-4">
+                                <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
+                            </div>
                     </div>
-                        <div className = "col-sm-4">
-                        <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
+                    <div className = "form-group row">
+                        <div className = "col-sm-2">
+                            <label>
+                                Gender: 
+                            </label>
+                        </div>
+                        <div className = "col-sm-2">
+                            <label> 
+                                <input name="gender" type="radio" value="male" onChange={this.handleChange} />
+                                Male
+                            </label>
+                        </div>
+                        <div className = "col-sm-2"> 
+                            <label>
+                                <input name="gender" type="radio" value="female" onChange={this.handleChange} />
+                                Female
+                            </label>
+                        </div>
                     </div>
-            </div>
-                <div className = "form-group row">
-                    <div className = "col-sm-2">
-                        <label>
-                            Gender: 
-                        </label>
+                    <div className="row">
+                        <div className = "col-sm-6">
+                            <input className="btn btn-primary" type="submit" value="Submit" />
+                        </div>
                     </div>
-                    <div className = "col-sm-2">
-                        <label> 
-                            <input name="gender" type="radio" value="male" onChange={this.handleChange} />
-                            Male
-                        </label>
-                    </div>
-                    <div className = "col-sm-2"> 
-                        <label>
-                            <input name="gender" type="radio" value="female" onChange={this.handleChange} />
-                            Female
-                        </label>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className = "col-sm-6">
-                        <input className="btn btn-primary" type="submit" value="Submit" />
-                    </div>
-                </div>
                 </div>
             </form>
             </div>
