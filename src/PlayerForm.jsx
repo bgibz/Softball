@@ -216,7 +216,11 @@ class PlayerForm extends React.Component{
         return (
         <div className="RosterMain">
             <div className = "container-fluid">
+<<<<<<< HEAD
                 <div className = "col-sm-6">
+=======
+                <div className = "col-sm-6">  
+>>>>>>> gh-pages
                     <Lineup entries={this.state.lineup} sendLineup={this.adjustLineup} />
                 </div>
                 <div className = "col-sm-6">
