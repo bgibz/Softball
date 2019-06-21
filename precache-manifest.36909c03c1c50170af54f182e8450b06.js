@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2a69d94e4fc4f69e57ed2f020be2e38a",
+    "revision": "ef0be2b84f0d6215f099d20079815595",
     "url": "/Softball/index.html"
   },
   {
-    "revision": "4397b1fa7dd2b8eeb980",
-    "url": "/Softball/static/css/main.736d7382.chunk.css"
+    "revision": "215844d195b70527daf6",
+    "url": "/Softball/static/css/main.1c45c191.chunk.css"
   },
   {
-    "revision": "dbe4ef753a86159cea38",
-    "url": "/Softball/static/js/2.34a4ff11.chunk.js"
+    "revision": "3e1fc5c6dfedf4abd0e0",
+    "url": "/Softball/static/js/2.6507ee23.chunk.js"
   },
   {
-    "revision": "4397b1fa7dd2b8eeb980",
-    "url": "/Softball/static/js/main.f2df4383.chunk.js"
+    "revision": "215844d195b70527daf6",
+    "url": "/Softball/static/js/main.2c7aebb7.chunk.js"
   },
   {
     "revision": "1470d3dc0675b99a42b7",
@@ -56,8 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Softball/static/media/Julia.455f80bb.mp3"
   },
   {
-    "revision": "bb692bdc6949bc7e9521a554d7e836f2",
-    "url": "/Softball/static/media/Kelly.bb692bdc.mp3"
+    "revision": "d1cefca8415d76fa951986a9e5949bc8",
+    "url": "/Softball/static/media/Kelly.d1cefca8.mp3"
   },
   {
     "revision": "9b263cc059df5818a849819887e3829b",
@@ -66,6 +66,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8f1ac0282eb5963dc216b758fb88fde7",
     "url": "/Softball/static/media/Matt.8f1ac028.mp3"
+  },
+  {
+    "revision": "1899d2fbf0252b7424f3c650eb05d24e",
+    "url": "/Softball/static/media/Meg.1899d2fb.mp3"
   },
   {
     "revision": "caab972b158ea4d6176b8d91fba5d1f5",
@@ -80,8 +84,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Softball/static/media/Ryan.b705bc6c.mp3"
   },
   {
-    "revision": "8d20928da95cfcbb468de2de8b21b31b",
-    "url": "/Softball/static/media/Sarah.8d20928d.mp3"
+    "revision": "99dcd355cea1163630c8fbfe5a7d2ffd",
+    "url": "/Softball/static/media/Sarah.99dcd355.mp3"
   },
   {
     "revision": "fc528c74fa6d78f71412c280b483adc5",
