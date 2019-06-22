@@ -24,7 +24,7 @@ class PlayerForm extends React.Component{
             key: 2,
             selected: false,
             handleClick: this.handlePlayerClick
-            },
+            },/*
             {
             name: "Mike",
             gender: "male",
@@ -38,7 +38,7 @@ class PlayerForm extends React.Component{
             key: 4,
             selected: false,
             handleClick: this.handlePlayerClick
-            },
+            },*/
             {
             name: "Matt",
             gender: "male",
@@ -52,7 +52,7 @@ class PlayerForm extends React.Component{
             key: 6,
             selected: false,
             handleClick: this.handlePlayerClick
-            },
+            },/*
             {
             name: "Allison",
             gender: "female",
@@ -66,7 +66,7 @@ class PlayerForm extends React.Component{
             key: 8,
             selected: false,
             handleClick: this.handlePlayerClick
-            },
+            },*/
             {
             name: "Iain",
             gender: "male",
@@ -80,7 +80,7 @@ class PlayerForm extends React.Component{
             key: 10,
             selected: false,
             handleClick: this.handlePlayerClick
-            },
+            },/*
             {
             name: "Sean",
             gender: "male",
@@ -101,7 +101,7 @@ class PlayerForm extends React.Component{
             key: 13,
             selected: false,
             handleClick: this.handlePlayerClick
-            },
+            },*/
             {
             name: "Sarah",
             gender: "female",
@@ -116,7 +116,34 @@ class PlayerForm extends React.Component{
             selected: false,
             handleClick: this.handlePlayerClick
             },
-
+            {
+            name: "Kevin",
+            gender: "male",
+            key: 16,
+            selected: false,
+            handleClick: this.handlePlayerClick
+            },
+            {
+                name: "Ryan",
+                gender: "male",
+                key: 17,
+                selected: false,
+                handleClick: this.handlePlayerClick
+            },
+            {
+            name: "Meg",
+            gender: "female",
+            key: 18,
+            selected: false,
+            handleClick: this.handlePlayerClick
+            },
+            {
+                name: "Dan",
+                gender: "male",
+                key: 19,
+                selected: false,
+                handleClick: this.handlePlayerClick
+            }
         ]
         this.state = {
             name: '',
@@ -216,11 +243,7 @@ class PlayerForm extends React.Component{
         return (
         <div className="RosterMain">
             <div className = "container-fluid">
-<<<<<<< HEAD
-                <div className = "col-sm-6">
-=======
                 <div className = "col-sm-6">  
->>>>>>> gh-pages
                     <Lineup entries={this.state.lineup} sendLineup={this.adjustLineup} />
                 </div>
                 <div className = "col-sm-6">
