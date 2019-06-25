@@ -24,7 +24,7 @@ class PlayerForm extends React.Component{
             key: 2,
             selected: false,
             handleClick: this.handlePlayerClick
-            },/*
+            },
             {
             name: "Mike",
             gender: "male",
@@ -38,7 +38,7 @@ class PlayerForm extends React.Component{
             key: 4,
             selected: false,
             handleClick: this.handlePlayerClick
-            },*/
+            },
             {
             name: "Matt",
             gender: "male",
@@ -52,7 +52,7 @@ class PlayerForm extends React.Component{
             key: 6,
             selected: false,
             handleClick: this.handlePlayerClick
-            },/*
+            },
             {
             name: "Allison",
             gender: "female",
@@ -66,7 +66,7 @@ class PlayerForm extends React.Component{
             key: 8,
             selected: false,
             handleClick: this.handlePlayerClick
-            },*/
+            },
             {
             name: "Iain",
             gender: "male",
@@ -80,7 +80,7 @@ class PlayerForm extends React.Component{
             key: 10,
             selected: false,
             handleClick: this.handlePlayerClick
-            },/*
+            },
             {
             name: "Sean",
             gender: "male",
@@ -101,7 +101,7 @@ class PlayerForm extends React.Component{
             key: 13,
             selected: false,
             handleClick: this.handlePlayerClick
-            },*/
+            },
             {
             name: "Sarah",
             gender: "female",
@@ -129,13 +129,6 @@ class PlayerForm extends React.Component{
                 key: 17,
                 selected: false,
                 handleClick: this.handlePlayerClick
-            },
-            {
-            name: "Meg",
-            gender: "female",
-            key: 18,
-            selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
                 name: "Dan",
