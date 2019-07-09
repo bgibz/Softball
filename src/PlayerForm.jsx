@@ -124,9 +124,16 @@ class PlayerForm extends React.Component{
             handleClick: this.handlePlayerClick
             },
             {
-                name: "Ryan",
+                name: "Ben",
                 gender: "male",
                 key: 17,
+                selected: false,
+                handleClick: this.handlePlayerClick
+            },
+            {
+                name: "Morgan",
+                gender: "female",
+                key: 18,
                 selected: false,
                 handleClick: this.handlePlayerClick
             },
