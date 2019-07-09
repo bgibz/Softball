@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0a9809ad3a50d950fcbcfcd460c144dd",
+    "revision": "06f3ba5cc22dd58914528bfa2ce4e182",
     "url": "/Softball/index.html"
   },
   {
-    "revision": "6537bec7d76ccfd0b078",
-    "url": "/Softball/static/css/main.00e5aad8.chunk.css"
+    "revision": "3d4c4db4f8decbb3d6d0",
+    "url": "/Softball/static/css/main.1c45c191.chunk.css"
   },
   {
-    "revision": "46322d9ca8d129039d7d",
-    "url": "/Softball/static/js/2.1b7d682a.chunk.js"
+    "revision": "4d515545c41c7bbd6496",
+    "url": "/Softball/static/js/2.94c2960e.chunk.js"
   },
   {
-    "revision": "6537bec7d76ccfd0b078",
-    "url": "/Softball/static/js/main.9a3c1c67.chunk.js"
+    "revision": "3d4c4db4f8decbb3d6d0",
+    "url": "/Softball/static/js/main.abbfc406.chunk.js"
   },
   {
     "revision": "1470d3dc0675b99a42b7",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cc9d54e5843b482cc24f57668fc5a6bb",
     "url": "/Softball/static/media/Alyssa.cc9d54e5.mp3"
+  },
+  {
+    "revision": "63be9322413e1859d6cbb987005c4c68",
+    "url": "/Softball/static/media/Ben.63be9322.mp3"
   },
   {
     "revision": "d28050e83a0fff59ab31d1fe5efc1ef2",
@@ -72,12 +76,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Softball/static/media/Mike.caab972b.mp3"
   },
   {
-    "revision": "6df940b1a26d322c94b7fd19c25ccb79",
-    "url": "/Softball/static/media/Robbie.6df940b1.mp3"
+    "revision": "9fd388194e188616cb1990cf59c4d026",
+    "url": "/Softball/static/media/Morgan.9fd38819.mp3"
   },
   {
-    "revision": "b705bc6cb5f3ff620d53e82b12bb327f",
-    "url": "/Softball/static/media/Ryan.b705bc6c.mp3"
+    "revision": "6df940b1a26d322c94b7fd19c25ccb79",
+    "url": "/Softball/static/media/Robbie.6df940b1.mp3"
   },
   {
     "revision": "99dcd355cea1163630c8fbfe5a7d2ffd",
