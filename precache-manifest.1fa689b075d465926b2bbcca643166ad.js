@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "04ec8a77820c01c51d2701e3431406c2",
+    "revision": "d38fea8962c9fade74fa0582fdce75b3",
     "url": "/Softball/index.html"
   },
   {
-    "revision": "3bf6016459340b363978",
+    "revision": "88ffe7754b8b8d075176",
     "url": "/Softball/static/css/main.1c45c191.chunk.css"
   },
   {
-    "revision": "4d515545c41c7bbd6496",
-    "url": "/Softball/static/js/2.94c2960e.chunk.js"
+    "revision": "235afc9ec5c654cbe62f",
+    "url": "/Softball/static/js/2.bc376ad3.chunk.js"
   },
   {
-    "revision": "3bf6016459340b363978",
-    "url": "/Softball/static/js/main.4aa7e59e.chunk.js"
+    "revision": "88ffe7754b8b8d075176",
+    "url": "/Softball/static/js/main.4497cf25.chunk.js"
   },
   {
     "revision": "1470d3dc0675b99a42b7",
@@ -30,10 +30,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cc9d54e5843b482cc24f57668fc5a6bb",
     "url": "/Softball/static/media/Alyssa.cc9d54e5.mp3"
-  },
-  {
-    "revision": "1f0ac304bc5a608cc50bf51d3f22301a",
-    "url": "/Softball/static/media/Ben.1f0ac304.mp3"
   },
   {
     "revision": "d28050e83a0fff59ab31d1fe5efc1ef2",
@@ -60,10 +56,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Softball/static/media/Julia.7ca98825.mp3"
   },
   {
-    "revision": "28691ca2d782e423e4e435514f2413f0",
-    "url": "/Softball/static/media/Justin.28691ca2.mp3"
-  },
-  {
     "revision": "d1cefca8415d76fa951986a9e5949bc8",
     "url": "/Softball/static/media/Kelly.d1cefca8.mp3"
   },
@@ -80,10 +72,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Softball/static/media/Mike.caab972b.mp3"
   },
   {
-    "revision": "403e87be2c77d257f752e65b921bc375",
-    "url": "/Softball/static/media/Morgan.403e87be.mp3"
-  },
-  {
     "revision": "6df940b1a26d322c94b7fd19c25ccb79",
     "url": "/Softball/static/media/Robbie.6df940b1.mp3"
   },
@@ -94,5 +82,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fc528c74fa6d78f71412c280b483adc5",
     "url": "/Softball/static/media/Sean.fc528c74.mp3"
+  },
+  {
+    "revision": "90f91bee82c41e69f6213aad7b6f1bf3",
+    "url": "/Softball/static/media/Tony.90f91bee.mp3"
   }
 ]);
