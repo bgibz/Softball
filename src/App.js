@@ -8,24 +8,51 @@ import walkupService from './walkupService';
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      topOfOrder: [],
-      currentOrder: [],
-      maleOrder: [],
-      femaleOrder: [],
-      maleNext: 0,
-      femaleNext: 0,
-      flag: true,
-      doubleGender: "none",
-      genderAtBat: "male",
-      media: true
-    };
+    this.persistState = this.persistState.bind(this);
+    this.getState = this.getState.bind(this);
+    let savedState = this.getState();
+    if (!savedState) {
+      this.state = {
+        topOfOrder: [],
+        currentOrder: [],
+        maleOrder: [],
+        femaleOrder: [],
+        maleNext: 0,
+        femaleNext: 0,
+        flag: true,
+        doubleGender: "none",
+        genderAtBat: "male",
+        media: true
+      };
+    } else {
+      this.state = savedState;
+    }
+    
     this.getLineup = this.getLineup.bind(this);
     this.triggerNext = this.triggerNext.bind(this);
     this.setInitialGender = this.setInitialGender.bind(this);
     this.setSiamese = this.setSiamese.bind(this);
     this.walkupService = new walkupService();
     this.toggleMute = this.toggleMute.bind(this);
+    this.clearLocalStorage = this.clearLocalStorage.bind(this);
+    
+  }
+
+  persistState() {
+    localStorage.setItem("gameState", JSON.stringify(this.state));
+    console.log("Persisting state...");
+    console.log(localStorage.getItem("gamestate"));
+  }
+
+  getState() {
+    let persisted = JSON.parse(localStorage.getItem("gameState"));
+    console.log(persisted);
+    return persisted;
+  }
+  
+  clearLocalStorage(){
+      localStorage.clear();
+      window.location.reload();
   }
 
   getLineup(data) {
@@ -150,6 +177,7 @@ class App extends React.Component {
   }
 
   render() {
+    this.persistState();
     var noneButton = "btn btn-secondary btn-sm";
     if (this.state.doubleGender === "none")
       noneButton = "btn btn-success btn-sm";
@@ -159,6 +187,7 @@ class App extends React.Component {
     var femaleButton = "btn btn-secondary btn-sm";
     if (this.state.doubleGender === 'female')
       femaleButton = "btn btn-success btn-sm";
+    var resetButton = "btn btn-danger btn-sm";
     var muteButton = "btn btn-secondary btn-sm";
     if (!this.state.media)
       muteButton = "btn btn-danger btn-sm";
@@ -205,9 +234,18 @@ class App extends React.Component {
                   </div>
                   </td>
                   <td><span className="toggleLabelRight"><strong> F </strong></span></td>
-                  <td><button className = {muteButton} onClick = {(e) => this.toggleMute()}>
-                    <i className = "fa fa-volume-off"></i>
-                  </button></td>
+                  <td>
+                    <button className = {muteButton} onClick = {(e) => this.toggleMute()}>
+                      <i className = "fa fa-volume-off"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={8}>
+                    <button className = {resetButton} onClick ={(e) => this.clearLocalStorage()}>
+                      Reset Game
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>

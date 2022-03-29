@@ -10,6 +10,8 @@ class PlayerForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlePlayerClick = this.handlePlayerClick.bind(this);
         this.adjustLineup = this.adjustLineup.bind(this);
+        this.setState = this.setState.bind(this);
+        this.getState = this.getState.bind(this);
         var DMAG = [
             {
             name: "Brendan",
@@ -145,13 +147,19 @@ class PlayerForm extends React.Component{
                 handleClick: this.handlePlayerClick
             }
         ]
-        this.state = {
-            name: '',
-            gender: '',
-            players: DMAG,
-            lineup: [],
-            showNewPlayerModal: false
-        };
+        let savedState = this.getState();
+        if (!savedState){
+            this.state = {
+                name: '',
+                gender: '',
+                players: DMAG,
+                lineup: [],
+                showNewPlayerModal: false
+            };
+
+        } else {
+            this.state = savedState;
+        }
     }
 
     handleChange(event) {
@@ -239,7 +247,19 @@ class PlayerForm extends React.Component{
         this.props.getLineup(data);
     }
 
+    persistState() {
+        localStorage.setItem("playerState", JSON.stringify(this.state));
+        //console.log(localStorage.getItem("scoreboardState"));
+      }
+    
+      getState() {
+        let persisted = JSON.parse(localStorage.getItem("playerState"));
+        //console.log(persisted);
+        return persisted;
+      }
+
     render() {
+        this.persistState();
         return (
         <div className="RosterMain">
             <div className = "container-fluid">
