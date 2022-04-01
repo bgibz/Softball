@@ -6,19 +6,37 @@ class Scoreboard extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            inning: 1,
-            half: 'top',
-            homescore: 0,
-            awayscore: 0,
-            home: 'Home',
-            away: 'Away',
-            outs: 0,
-            scoreboard: [0,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',0,0]
-        };
-
+        this.persistState = this.persistState.bind(this);
+        this.getState = this.getState.bind(this);
+        let savedState = this.getState();
+        if (!savedState) {
+            this.state = {
+                inning: 1,
+                half: 'top',
+                homescore: 0,
+                awayscore: 0,
+                home: 'Home',
+                away: 'Away',
+                outs: 0,
+                scoreboard: [0,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',0,0]
+            };
+        } else {
+            this.state = savedState;
+        }
         this.handleChange = this.handleChange.bind(this);
     }
+
+    persistState() {
+        localStorage.setItem("scoreboardState", JSON.stringify(this.state));
+        //console.log(localStorage.getItem("scoreboardState"));
+      }
+    
+      getState() {
+        let persisted = JSON.parse(localStorage.getItem("scoreboardState"));
+        //console.log(persisted);
+        return persisted;
+      }
+
     handleChange(event) {
         const name = event.target.name;
         const value = event.target.value;
@@ -155,6 +173,7 @@ class Scoreboard extends React.Component {
 
 
     render() {
+        this.persistState();
         var arrow = 'fa fa-caret-up';
         if (this.state.half === "bottom")
             arrow = 'fa fa-caret-down';
