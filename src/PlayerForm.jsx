@@ -18,133 +18,114 @@ class PlayerForm extends React.Component{
             gender: "male",
             key: 1,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Julia",
             gender: "female",
             key: 2,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Mike",
             gender: "male",
             key: 3,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Alyssa",
             gender: "female",
             key: 4,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Matt",
             gender: "male",
             key: 5,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Kelly",
             gender: "female",
             key: 6,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Allison",
             gender: "female",
             key: 7,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Danica",
             gender: "female",
             key: 8,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Iain",
             gender: "male",
             key: 9,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Allie",
             gender: "female",
             key: 10,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Sean",
             gender: "male",
             key: 11,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Emma",
             gender: "female",
             key: 12,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Robbie",
             gender: "male",
             key: 13,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Sarah",
             gender: "female",
             key: 14,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Tony",
             gender: "male",
             key: 15,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
             name: "Kevin",
             gender: "male",
             key: 16,
             selected: false,
-            handleClick: this.handlePlayerClick
             },
             {
                 name: "Ben",
                 gender: "male",
                 key: 17,
                 selected: false,
-                handleClick: this.handlePlayerClick
             },
             {
                 name: "Morgan",
                 gender: "female",
                 key: 18,
                 selected: false,
-                handleClick: this.handlePlayerClick
             },
             {
                 name: "Dan",
                 gender: "male",
                 key: 19,
                 selected: false,
-                handleClick: this.handlePlayerClick
             }
         ]
         let savedState = this.getState();
@@ -267,7 +248,7 @@ class PlayerForm extends React.Component{
                     <Lineup entries={this.state.lineup} sendLineup={this.adjustLineup} />
                 </div>
                 <div className = "col-sm-6">
-                    <Players entries={this.state.players}/>
+                    <Players entries={this.state.players} handleClick={this.handlePlayerClick}/>
                 </div>
             </div>
             <div className = "container-fluid">
