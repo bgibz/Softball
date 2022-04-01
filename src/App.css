@@ -13,7 +13,7 @@
   color: white;
 }
 
-@media (orientation: landscape) and (max-height: 720px)  {
+@media (orientation: landscape) and (max-height: 720px) {
   .App-header {
     height: 130vh;
   }
@@ -48,16 +48,6 @@
   list-style: none;
 }
 
-.lineupUp {
-  margin-top: 0px;
-  margin-left: 6px;
-}
-
-.lineupDown {
-  margin-bottom: 5px;
-  margin-left: 6px;
-}
-
 .lineupCard {
   height: 150%;
 }
@@ -85,13 +75,13 @@
 }
 
 table thead th {
-  text-align:center;
+  text-align: center;
 }
 
-table td.toggleSquare{
+table td.toggleSquare {
   min-width: 60px;
 }
 
 .scoreboardOuts {
-  font-size: 200%
+  font-size: 200%;
 }
