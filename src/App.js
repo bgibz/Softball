@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import './toggle.css';
+import './style/App.css';
+import './style/toggle.css';
 import PlayerForm from './PlayerForm';
 import Scoreboard from  './Scoreboard';
 import walkupService from './walkupService';

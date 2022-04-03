@@ -85,3 +85,7 @@ table td.toggleSquare {
 .scoreboardOuts {
   font-size: 200%;
 }
+
+#rosterButton {
+  margin-bottom: 25px;
+}

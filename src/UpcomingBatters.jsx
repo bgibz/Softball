@@ -1,5 +1,5 @@
 import React from 'react';
-import './Scoreboard.css';
+import './style/Scoreboard.css';
 
 class UpcomingBatters extends React.Component {
 

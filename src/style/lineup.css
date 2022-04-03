@@ -4,6 +4,8 @@
 table.myTable {
   border: 1px dashed;
   border-collapse: collapse;
+  margin: auto;
+  width: -webkit-fill-available;
 }
 
 .myTable th {

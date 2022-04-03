@@ -1,4 +1,6 @@
 import React from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 import Players from './Players.jsx';
 import Lineup from './Lineup.jsx';
 
@@ -12,6 +14,8 @@ class PlayerForm extends React.Component{
         this.adjustLineup = this.adjustLineup.bind(this);
         this.setState = this.setState.bind(this);
         this.getState = this.getState.bind(this);
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
         var DMAG = [
             {
             name: "Brendan",
@@ -134,8 +138,8 @@ class PlayerForm extends React.Component{
                 name: '',
                 gender: '',
                 players: DMAG,
-                lineup: [],
-                showNewPlayerModal: false
+                showModal: false,
+                lineup: []
             };
 
         } else {
@@ -231,25 +235,60 @@ class PlayerForm extends React.Component{
     persistState() {
         localStorage.setItem("playerState", JSON.stringify(this.state));
         //console.log(localStorage.getItem("scoreboardState"));
-      }
+    }
     
       getState() {
         let persisted = JSON.parse(localStorage.getItem("playerState"));
         //console.log(persisted);
         return persisted;
-      }
+    }
+
+    handleShow() {
+        this.setState(() => {
+            return {
+                showModal: true
+            }
+        });
+    }
+
+    handleClose() {
+        this.setState(() => {
+            return {
+                showModal: false
+            }
+        });
+    }
 
     render() {
         this.persistState();
         return (
         <div className="RosterMain">
             <div className = "container-fluid">
-                <div className = "col-sm-6">  
-                    <Lineup entries={this.state.lineup} sendLineup={this.adjustLineup} />
+                <div className="row">
+                    <div className = "col-xs-12 col-sm-10 col-sm-offset-1">
+                        <Button variant="primary" onClick={this.handleShow} id="rosterButton">Add Players to Lineup</Button>
+                    </div>
                 </div>
-                <div className = "col-sm-6">
-                    <Players entries={this.state.players} handleClick={this.handlePlayerClick}/>
+                <div className = "row">
+                    <div className = "col-xs-12 col-sm-10 col-sm-offset-1">  
+                        <Lineup entries={this.state.lineup} sendLineup={this.adjustLineup} />
+                    </div>
                 </div>
+                <Modal show={this.state.showModal} onHide={this.handleClose} animation={false}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Roster</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <div className = "col-sm-12">
+                            <Players entries={this.state.players} handleClick={this.handlePlayerClick}/>
+                        </div>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="default" onClick={this.handleClose}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             </div>
             <div className = "container-fluid">
             <div className="row">

@@ -88,6 +88,7 @@ class Lineup extends React.Component {
     return (
       <div className="lineup">
         <table className="myTable">
+          <tbody>
           <tr>
             <th></th>
             <th>Today's Lineup</th>
@@ -95,6 +96,7 @@ class Lineup extends React.Component {
             <th></th>
           </tr>
             {players}
+            </tbody>
         </table>
         </div>
     );
