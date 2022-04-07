@@ -121,3 +121,10 @@ input[type="radio"] {
 input[type="text"] {
   width: 75%;
 }
+
+/** Moble **/
+@media screen and (max-width: 600px) {
+  #playerForm.active {
+    height: 210px;
+  }
+}
