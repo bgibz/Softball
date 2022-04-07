@@ -139,7 +139,8 @@ class PlayerForm extends React.Component{
                 gender: '',
                 players: DMAG,
                 showModal: false,
-                lineup: []
+                lineup: [],
+                showForm: false
             };
 
         } else {
@@ -259,6 +260,11 @@ class PlayerForm extends React.Component{
         });
     }
 
+    handleForm(status) {
+        if (status)  this.setState( () => { return { showForm: false } });
+        else this.setState( () => { return {showForm: true }});
+    }
+
     render() {
         this.persistState();
         return (
@@ -266,7 +272,7 @@ class PlayerForm extends React.Component{
             <div className = "container-fluid">
                 <div className="row">
                     <div className = "col-xs-12 col-sm-10 col-sm-offset-1">
-                        <Button variant="primary" onClick={this.handleShow} id="rosterButton">Add Players to Lineup</Button>
+                        <Button variant="primary" onClick={this.handleShow} id="rosterButton">Manage Today's Lineup</Button>
                     </div>
                 </div>
                 <div className = "row">
@@ -291,49 +297,55 @@ class PlayerForm extends React.Component{
                 </Modal>
             </div>
             <div className = "container-fluid">
-            <div className="row">
-                <div className="col-sm-6">
-                    <h3>Add New Player to Roster</h3>
-                </div>
-            </div>
-            <form onSubmit={this.handleSubmit}>
-                <div className = "container-fluid">
-                    <div className = "form-group row">
-                            <div className = "col-sm-2">
-                                <label>
-                                Name:
-                                </label>
-                            </div>
-                                <div className = "col-sm-4">
-                                <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
-                            </div>
-                    </div>
-                    <div className = "form-group row">
-                        <div className = "col-sm-2">
-                            <label>
-                                Gender: 
-                            </label>
-                        </div>
-                        <div className = "col-sm-2">
-                            <label> 
-                                <input name="gender" type="radio" value="male" onChange={this.handleChange} />
-                                Male
-                            </label>
-                        </div>
-                        <div className = "col-sm-2"> 
-                            <label>
-                                <input name="gender" type="radio" value="female" onChange={this.handleChange} />
-                                Female
-                            </label>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className = "col-sm-6">
-                            <input className="btn btn-primary" type="submit" value="Submit" />
-                        </div>
+                <div className="row">
+                    <div className="col-sm-12">
+                        <h3>Add New Player to Roster 
+                            <span id="toggleForm" className ={this.state.showForm ? 'fa fa-caret-down' : 'fa fa-caret-up'} onClick={(e) => this.handleForm(this.state.showForm)}></span>
+                        </h3>
                     </div>
                 </div>
-            </form>
+                <div className="row">
+                    <div className="col-sm-12">
+                    <form id="playerForm" className = {this.state.showForm ? 'active' : 'default'} onSubmit={this.handleSubmit} >
+                        <div className = "container-fluid">
+                            <div className = "form-group row">
+                                    <div className = "col-sm-2 col-sm-offset-2">
+                                        <label>
+                                        Name:
+                                        </label>
+                                    </div>
+                                        <div className = "col-sm-6">
+                                        <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
+                                    </div>
+                            </div>
+                            <div className = "form-group row">
+                                <div className = "col-sm-2 col-sm-offset-2">
+                                    <label>
+                                        Gender: 
+                                    </label>
+                                </div>
+                                <div className = "col-sm-3">
+                                    <label> 
+                                        <input name="gender" type="radio" value="male" onChange={this.handleChange} />
+                                        Male
+                                    </label>
+                                </div>
+                                <div className = "col-sm-3"> 
+                                    <label>
+                                        <input name="gender" type="radio" value="female" onChange={this.handleChange} />
+                                        Female
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className = "col-sm-4 col-sm-offset-4" id="submitPlayerForm">
+                                    <input className="btn btn-primary" type="submit" value="Submit" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
             </div>
         </div>
         );
