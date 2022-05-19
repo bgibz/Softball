@@ -31,11 +31,15 @@
   display: inline-block;
   margin: 0;
   padding: 0;
+  min-width: -webkit-fill-available;
 }
 
 .roster li {
-  padding: 2px 5px;
+  padding: 10px 5px;
   margin: 5px 5px 5px 10px;
+  text-align: center;
+  font-family: "Sedgwick Ave", Helvetica, sans-serif;
+  font-size: 1.2em;
 }
 
 .theList {
@@ -57,21 +61,27 @@
 }
 
 .male {
-  background-color: lightblue;
-  width: 200px;
-  height: 50px;
-  padding: 5px;
+  background-color: rgb(192, 229, 241, 0.5);
+  width: 95%;
+  min-height: 50px;
   border-style: dashed;
   margin: 5px 5px 5px 5px;
 }
 
+.male.selected {
+  opacity: 50%;
+}
+
 .female {
-  background-color: lavender;
-  width: 200px;
-  height: 50px;
-  padding: 5px;
+  background-color: rgb(230, 230, 247, 0.5);
+  width: 95%;
+  min-height: 50px;
   border: dashed;
   margin: 5px 5px 5px 5px;
+}
+
+.female.selected {
+  opacity: 50%;
 }
 
 table thead th {
