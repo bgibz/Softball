@@ -1,0 +1,140 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #343a40;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@media (orientation: landscape) and (max-height: 720px) {
+  .App-header {
+    height: 130vh;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.RosterMain {
+  margin: 10px 5px 5px 10px;
+}
+
+.roster ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  min-width: -webkit-fill-available;
+}
+
+.roster li {
+  padding: 10px 5px;
+  margin: 5px 5px 5px 10px;
+  text-align: center;
+  font-family: "Sedgwick Ave", Helvetica, sans-serif;
+  font-size: 1.2em;
+}
+
+.theList {
+  list-style: none;
+  background-color: ghostwhite;
+}
+
+.lineupList {
+  display: inline-block;
+  list-style: none;
+}
+
+.lineupCard {
+  height: 150%;
+}
+
+.lineupSidebar {
+  font-size: 20px;
+}
+
+.male {
+  background-color: rgb(192, 229, 241, 0.5);
+  width: 95%;
+  min-height: 50px;
+  border-style: dashed;
+  margin: 5px 5px 5px 5px;
+}
+
+.male.selected {
+  opacity: 50%;
+}
+
+.female {
+  background-color: rgb(230, 230, 247, 0.5);
+  width: 95%;
+  min-height: 50px;
+  border: dashed;
+  margin: 5px 5px 5px 5px;
+}
+
+.female.selected {
+  opacity: 50%;
+}
+
+table thead th {
+  text-align: center;
+}
+
+table td.toggleSquare {
+  min-width: 60px;
+}
+
+.scoreboardOuts {
+  font-size: 200%;
+}
+
+#rosterButton {
+  margin-bottom: 25px;
+}
+
+#toggleForm {
+  margin: 0px 0px 15px 10px;
+}
+
+#playerForm {
+  text-align: left;
+}
+
+#playerForm.default {
+  height: 0px;
+  overflow: auto;
+  transition: height 1s;
+}
+
+#playerForm.active {
+  height: 150px;
+  overflow: auto;
+  transition: height 1s;
+}
+
+#submitPlayerForm {
+  text-align: center;
+}
+
+input[type="radio"] {
+  margin: 4px 5px 0px;
+}
+
+input[type="text"] {
+  width: 75%;
+}
+
+/** Moble **/
+@media screen and (max-width: 600px) {
+  #playerForm.active {
+    height: 210px;
+  }
+}

@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Sedgwick+Ave);
+
+table.myTable {
+  border: 1px dashed;
+  border-collapse: collapse;
+  margin: auto;
+  width: -webkit-fill-available;
+}
+
+.myTable th {
+  border: 1px dashed;
+  text-align: left;
+  padding: 5px 15px 5px 15px;
+  font-size: 2em;
+  font-family: "Lobster";
+}
+.myTable td {
+  border: 1px dashed;
+  padding: 5px 0px 5px 5px;
+  height: 100px;
+}
+
+table .countTable {
+  border: none;
+  border-collapse: collapse;
+  padding: 0px;
+  position: absolute;
+  right: 5px;
+  top: -5px;
+}
+
+.countTable td {
+  border: 1px solid;
+  height: 15px;
+  width: 15px;
+}
+
+td .strike3 {
+  border: none;
+}
+
+.nameCell {
+  padding-right: 10px;
+  font-family: "Sedgwick Ave", Helvetica, sans-serif;
+  font-size: 2.5em;
+  width: 50%;
+}
+
+.field {
+  position: absolute;
+  top: -55px;
+  left: 30px;
+  height: 75px;
+  width: 75px;
+  border-radius: 1% 80% 1% 1%;
+  border: 1px dashed;
+  background-color: white;
+  -webkit-transform: rotate(-45deg);
+}
+
+.infield {
+  position: absolute;
+  top: -7px;
+  left: 50px;
+  height: 35px;
+  width: 35px;
+  border-radius: 1% 1% 1% 1%;
+  border: 1px dashed; /*#9b7653; */
+  background-color: white; /*#9b7653;*/
+  -webkit-transform: rotate(-45deg);
+}
+
+.stadium {
+  position: relative;
+  width: 200px;
+}
+
+.lineupUp {
+  margin-top: 0px;
+}
+
+.lineupDown {
+  margin-bottom: 5px;
+}
+
+/** Mobile **/
+
+@media screen and (max-width: 600px) {
+  .myTable th {
+    font-size: 1.5em;
+  }
+
+  .field {
+    top: -50px;
+    left: 5px;
+    height: 35px;
+    width: 35px;
+  }
+
+  .infield {
+    position: absolute;
+    top: -25px;
+    left: 15px;
+    height: 15px;
+    width: 15px;
+  }
+
+  .countTable td {
+    height: 10px;
+    width: 10px;
+  }
+}
